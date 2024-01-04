@@ -6,7 +6,7 @@ function Section2() {
   return (
   <div className='bg-primary'>
   <div className='md:pl-12 md:text-left p-0 text-center'>
-    <h1 className='font-playfair sm:text-[36px] text-[20px] text-gray-900  underline'><span className='sm:text-[64px] text-[40px]'></span> Collections</h1>
+    <h1 className='font-playfair sm:text-[36px] text-[20px] text-gray-900  underline'><span className='sm:text-[64px] text-[40px]'>Trending</span> Collections</h1>
     <p className='font-playfair text-[20px] text-gray-900'>Have a look on what's trending now!</p>
   </div>
   <div className='h-auto w-full flex md:flex-row flex-col items-center justify-evenly'>
