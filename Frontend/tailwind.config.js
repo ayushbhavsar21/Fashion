@@ -14,7 +14,6 @@ export default {
         imperialred: "#70002B"
       },
       fontFamily: {
-        Display: ['DM Serif Display', 'serif'],
         playfair: ['Playfair Display', 'serif'],
         dancing: ['Dancing Script', 'cursive'],
       },
