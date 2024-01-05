@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import section11 from '../assets/section11.png';
-import section12 from '../assets/section12.png';
+import section11 from '../assets/section11(1).png';
+import section12 from '../assets/section12(1).png';
 import section13 from '../assets/section13.png';
 
 function Section1() {
@@ -33,9 +33,10 @@ function Section1() {
             } transition-opacity duration-500 ease-in-out`}
         >
 
-          <div className='absolute top-[13%]'><h1 className='xl:text-[250px] lg:text-[200px] md:text-[160px] sm:text-[130px] text-[80px] font-bold font-style: italic'>FASHION</h1></div>
+          <div className='absolute top-[13%]'>
+            <h1 className='  xl:text-[250px] lg:text-[200px] md:text-[160px] sm:text-[130px] text-[80px] font-bold font-style: italic'>FASHION</h1></div>
           <div className='absolute top-[13%] text-transparent z-10' style={{ WebkitTextStroke: '2px white' }}>
-            <h1 className='xl:text-[250px] font-bold lg:text-[200px] md:text-[160px] sm:text-[130px] text-[80px] font-style: italic'>FASHION</h1>
+            <h1 className='  xl:text-[250px] font-bold lg:text-[200px] md:text-[160px] sm:text-[130px] text-[80px] font-style: italic'>FASHION</h1>
           </div>
           <div className='absolute top-4 lg:right-[20vw] md:right-[10vw] sm:right-[5vw] right-0'>
             <img src={section.image} alt="" className='lg:h-[80vh] h-[60vh]' />

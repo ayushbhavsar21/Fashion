@@ -17,7 +17,7 @@ function Section2() {
             </div>
             <div>
                 <h3 className='font-playfair text-center pt-3 text-[22px] text-gray-900 font-medium'>Formal Shirt For Woman</h3>
-                <p className='font-playfair text-center pt-1 text-[18px] text-gray-900'>Price: $58</p>
+                <p className='font-playfair text-center pt-1 text-[18px] text-gray-900'>Price: ₹999</p>
             </div>
         </div>
     </div>
@@ -28,7 +28,7 @@ function Section2() {
             </div>
             <div>
                 <h3 className='font-playfair text-center pt-3 text-[22px] text-gray-900 font-medium'>Black and Gray Exercise Outfit</h3>
-                <p className='font-playfair text-center pt-1 text-[18px] text-gray-900'>Price: $47</p>
+                <p className='font-playfair text-center pt-1 text-[18px] text-gray-900'>Price: ₹1999</p>
             </div>
         </div>
     </div>
@@ -40,7 +40,7 @@ function Section2() {
             </div>
             <div>
                 <h3 className='font-playfair text-center pt-3 text-[22px] text-gray-900 font-medium'>Yellow Jackets for Winter</h3>
-                <p className='font-playfair text-center pt-1 text-[18px] text-gray-900'>Price: $47</p>
+                <p className='font-playfair text-center pt-1 text-[18px] text-gray-900'>Price: ₹999</p>
             </div>
         </div>
         <div className="self-end">
