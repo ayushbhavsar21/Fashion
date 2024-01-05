@@ -19,7 +19,7 @@ function Section1() {
   useEffect(() => {
     const intervalId = setInterval(() => {
       handleNextSection();
-    }, 2000);
+    }, 5000);
 
     return () => clearInterval(intervalId);
   }, [currentSection]);
