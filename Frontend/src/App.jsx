@@ -1,12 +1,13 @@
 import './App.css'
-import Section2 from './components/Section2'
-import Navbar from './components/Navbar'
+import Home from './pages/Home';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 function App() {
   return (
-    <>
-    <Navbar/>
-    <Section2/>
-    </>
+    <Router>
+      <Routes>
+      <Route exact path="/" element={<Home />} />
+      </Routes>
+    </Router>
   )
 }
 export default App
