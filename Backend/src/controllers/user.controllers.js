@@ -1,10 +1,10 @@
 import { asyncHandler } from "../utils/asyncHandler";
 
-const registerUser = asyncHandler((req,res)=>{
+const registerUser = asyncHandler(async(req,res)=>{
 
 });
 
-const logInUser = asyncHandler((req,res)=>{
+const logInUser = asyncHandler(async(req,res)=>{
 
 });
 
