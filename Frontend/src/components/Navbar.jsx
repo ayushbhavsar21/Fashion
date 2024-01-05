@@ -4,6 +4,7 @@ import login from '../assets/login.png';
 import search from '../assets/search.png';
 import ham from '../assets/ham.png';
 import languages from '../assets/languages.png';
+import fashion from '../assets/Fashion4.svg'
 
 function Navbar() {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -26,7 +27,8 @@ function Navbar() {
     <>
       <div className='h-[12vh] flex justify-between items-center bg-primary sm:p-8 p-3'>
         <div>
-          <h1 className='sm:text-[22px] text-[18px] text-imperialred font-bold'>FASHION</h1>
+          {/* <h1 className='sm:text-[22px] text-[18px] text-imperialred font-bold'>FASHION</h1> */}
+          <img className='h-[15vh] w-[25vw]' src={fashion} alt="FASHION" />
         </div>
         <div className='lg:flex gap-4 hidden'>
           <div>
