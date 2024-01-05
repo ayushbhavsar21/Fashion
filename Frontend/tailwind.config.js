@@ -15,7 +15,7 @@ export default {
       },
       fontFamily: {
         playfair: ['Playfair Display', 'serif'],
-        
+        dancing: ['Dancing Script', 'cursive'],
       },
     },
   },

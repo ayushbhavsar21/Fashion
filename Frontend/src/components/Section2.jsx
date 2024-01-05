@@ -6,11 +6,11 @@ function Section2() {
   return (
   <div className='bg-primary'>
   <div className='md:pl-12 md:text-left p-0 text-center'>
-    <h1 className='font-playfair sm:text-[36px] text-[20px] text-gray-900  underline'><span className='sm:text-[64px] text-[40px]'>Trending</span> Collections</h1>
+    <h1 className='font-dancing sm:text-[36px] text-[20px] text-gray-900'><span className='sm:text-[64px] text-[40px]'>Trending</span> Collections</h1>
     <p className='font-playfair text-[20px] text-gray-900'>Have a look on what's trending now!</p>
   </div>
   <div className='h-auto w-full flex md:flex-row flex-col items-center justify-evenly'>
-    <div className='flex justify-center md:h-[100vh] h-[90vh] xl:w-[33vw] md:w-[28vw] w-[90vw] items-center '>
+    <div className='flex justify-center md:h-[100vh] h-[85vh] xl:w-[33vw] md:w-[28vw] w-[90vw] items-center '>
         <div className='bg-tertiary border-[2px] border-quaternary p-8 rounded-2xl'>
             <div>
                 <img src={section21} alt="" />
@@ -21,7 +21,7 @@ function Section2() {
             </div>
         </div>
     </div>
-    <div className='flex justify-center md:h-[100vh] h-[90vh] md:w-[35vw] w-[90vw]  items-center '>
+    <div className='flex justify-center md:h-[100vh] h-[85vh] md:w-[35vw] w-[90vw]  items-center '>
         <div className='bg-tertiary border-[2px] border-quaternary p-8 rounded-2xl'>
             <div>
                 <img src={section22} alt="" />
@@ -32,7 +32,7 @@ function Section2() {
             </div>
         </div>
     </div>
-    <div className='flex justify-center md:h-[100vh] h-[90vh] xl:w-[33vw] md:w-[28vw] w-[90vw] items-center '>
+    <div className='flex justify-center md:h-[100vh] h-[85vh] xl:w-[33vw] md:w-[28vw] w-[90vw] items-center pt-20 sm:pt-0'>
         <div className='flex flex-col gap-12 justify-end'>
         <div className='bg-tertiary border-[2px] border-quaternary p-8 rounded-2xl'>
             <div>
