@@ -73,7 +73,7 @@ function Navbar() {
               <img src={languages} alt="" className='h-[35px] pt-2'/>
             </button>
             {isLanguagesDropdownOpen && (
-              <div className='absolute top-[12vh] right-0 w-32 bg-primary border-[2px] border-imperialred rounded shadow'>
+              <div className='absolute top-[12vh] right-0 w-32 bg-primary border-[2px] border-imperialred rounded shadow z-20'>
                 <div className='p-2 cursor-pointer hover:bg-gray-200'>English</div>
                 <div className='p-2 cursor-pointer hover:bg-gray-200'>Hindi</div>
                 <div className='p-2 cursor-pointer hover:bg-gray-200'>Tamil</div>
