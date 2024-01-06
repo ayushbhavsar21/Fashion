@@ -1,9 +1,9 @@
 import Navbar from "./Navbar";
 import { useState } from "react";
-import Clipart from "../assets/Buyerregister.svg"
+import Clipart from "../assets/Sellerregister.svg"
 import line from "../assets/line.png"
 import Google from "../assets/Google.png"
-function Buyerregister() {
+function Sellerregister() {
 
     const [Name, setName] = useState("");
     const [Email, setEmail] = useState("");
@@ -18,8 +18,8 @@ function Buyerregister() {
                 <div className=" ml-[10%] w-[50%]">
                     <div className=" mt-[9vh] rounded-lg bg-tertiary w-[80%] h-[85vh] flex flex-col ">
 
-                        <div className=" mt-[5vh] ml-[10vw] text-[18px] lg:text-[22px]  ">Create a Buyer's Account</div>
-                        <div className=" mt-[5vh] ml-[3vw]">Name</div>
+                        <div className=" mt-[5vh] ml-[10vw] text-[18px] lg:text-[22px]  ">Create a Seller's Account</div>
+                        <div className=" mt-[5vh] ml-[3vw]">Company Name / Business</div>
                         <input className=" mt-[2vh] ml-[3vw] mr-[3vw] h-[5vh] rounded-lg " type="text" name="name" value={Name} onChange={(e) => setName(e.target.value)} />
 
                         <div className=" mt-[2vh] ml-[3vw]">Email</div>
@@ -45,10 +45,10 @@ function Buyerregister() {
                         </a>
                     </div>
                     <div className=" mt-[4vh] w-[80%] h-[10vh] flex flex-col items-center">
-                        <div className="text-[24px]">Don't Have Account ?</div>
-                        <a href="/Sellerregister">
+                        <div className="text-[24px]">Want a Buyer's Account ?</div>
+                        <a href="/Buyerregister">
                             <button className=" mt-[2vh] flex   border-2 border-secondary drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] bg-secondary  rounded-lg text-white " >
-                                <p className=" w-[24vw] text-[14px] max-[1100px]:text-[16px] xl:text-[22px] ">Create a Seller's Account</p>
+                                <p className=" w-[24vw] text-[14px] max-[1100px]:text-[16px] xl:text-[22px] ">Create a Buyer's Account</p>
                             </button>
                         </a>
                     </div>
@@ -59,7 +59,7 @@ function Buyerregister() {
                     <div className=" ml-[20%] w-[80%]">
                         <div className=" mt-[9vh] rounded-lg bg-tertiary w-[80%] h-[70vh] flex flex-col ">
                             <div className=" mt-[4vh] ml-[10vw] text-[18px] lg:text-[22px]  ">Create a Buyer's Account</div>
-                            <div className=" mt-[2vh] ml-[3vw]">Name</div>
+                            <div className=" mt-[2vh] ml-[3vw]">Company Name / Business</div>
                             <input className=" mt-[1vh] ml-[3vw] mr-[3vw] h-[5vh] rounded-lg " type="text" name="name" value={Name} onChange={(e) => setName(e.target.value)} />
 
                             <div className=" mt-[2vh] ml-[3vw]">Email</div>
@@ -86,7 +86,7 @@ function Buyerregister() {
                         </div>
                         <div className=" mt-[4vh] w-[80%] h-[10vh] flex flex-col items-center">
                             <div className="text-[24px]">Want Seller's Account ?</div>
-                            <a href="/Sellerregister">
+                            <a href="/Buyerregister">
                             <button className=" mt-[2vh] flex   border-2 border-secondary drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] bg-secondary  rounded-lg text-white " >
                                 <p className="  ml-[2vw] mr-[2vw]  text-[16px]  ">Create an Seller's Account</p>
                             </button>
@@ -98,4 +98,4 @@ function Buyerregister() {
         </>
     );
 }
-export default Buyerregister
+export default Sellerregister

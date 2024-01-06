@@ -35,7 +35,7 @@ function SignIn() {
                                 <p className="  w-[24vw] text-[14px] max-[1100px]:text-[16px] xl:text-[22px]  ">Create an Buyer's Account</p>
                             </button>
                         </a>
-                        <a href="">
+                        <a href="/Sellerregister">
                             <button className=" mt-[2vh] flex   border-2 border-secondary drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] bg-secondary  rounded-lg text-white " >
                                 <p className=" w-[24vw] text-[14px] max-[1100px]:text-[16px] xl:text-[22px] ">Create an Seller's Account</p>
                             </button>
@@ -69,9 +69,11 @@ function SignIn() {
                                     <p className=" ml-[2vw] mr-[2vw]  text-[16px]  ">Create an Buyer's Account</p>
                                 </button>
                             </a>
+                            <a href="/Sellerregister">
                             <button className=" mt-[2vh] flex   border-2 border-secondary drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] bg-secondary  rounded-lg text-white " >
                                 <p className="  ml-[2vw] mr-[2vw]  text-[16px]  ">Create an Seller's Account</p>
                             </button>
+                            </a>
                         </div>
                     </div>
                 </div>
