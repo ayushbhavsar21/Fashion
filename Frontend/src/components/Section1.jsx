@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import section11 from '../assets/section11(1).png';
-import section12 from '../assets/section12(1).png';
-import section13 from '../assets/section13.png';
+import section11 from '../assets/section11.svg';
+import section12 from '../assets/section12.svg';
+import section13 from '../assets/section13.svg';
 
 function Section1() {
   const sections = [
