@@ -61,7 +61,7 @@ function Navbar() {
             </button>
           </div>
           <div className='hidden lg:block'>
-            <a href="">
+            <a href="/SignIn">
               <img src={login} alt="" className='h-[23px]' />
             </a>
           </div>
