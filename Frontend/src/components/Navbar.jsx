@@ -28,7 +28,7 @@ function Navbar() {
       <div className='h-[12vh] flex justify-between items-center bg-primary sm:p-8 p-3'>
         <div>
           {/* <h1 className='sm:text-[22px] text-[18px] text-imperialred font-bold'>FASHION</h1> */}
-          <img className='h-[15vh] w-[25vw]' src={fashion} alt="FASHION" />
+          <img className='sm:h-[12vh] h-[10vh]' src={fashion} alt="FASHION" />
         </div>
         <div className='lg:flex gap-4 hidden'>
           <div>
