@@ -100,7 +100,7 @@ function Navbar() {
 
           </div>
           <div>
-            <a href="" className='text-[18px] text-gray-900 pl-2'>
+            <a href="/" className='text-[18px] text-gray-900 pl-2'>
               Discover
             </a>
             <hr className="absolute left-2 right-2 border-gray-400 lg:hidden my-2" />
