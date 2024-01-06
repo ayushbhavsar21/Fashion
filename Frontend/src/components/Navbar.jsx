@@ -32,7 +32,7 @@ function Navbar() {
         </div>
         <div className='lg:flex gap-4 hidden'>
           <div>
-            <a href="" className='text-[19px] text-gray-900'>
+            <a href="/" className='text-[19px] text-gray-900'>
               Discover
             </a>
           </div>
