@@ -1,6 +1,6 @@
-import { asyncHandler } from "../utils/asyncHandler";
-import { User } from "../models/user.models";
-import { ApiError } from "../utils/ApiError";
+import { asyncHandler } from "../utils/asyncHandler.js";
+import { User } from "../models/user.model.js"
+import { ApiError } from "../utils/ApiError.js";
 
 const generateAccessAndRefereshTokens = async(userId) =>{
     try {
@@ -27,7 +27,7 @@ const registerUser = asyncHandler(async(req,res)=>{
         $or: [{email}, {userName}]
     });
 
-    if( [userName, email, fullName, password].some(field=>{
+    if( [userName, email, password].some(field=>{
         field?.trim()=== ""}))
     {
         throw new ApiError(400, "All fields are required!!");
@@ -38,8 +38,8 @@ const registerUser = asyncHandler(async(req,res)=>{
     }
 
     const user = await User.create({
-        userName: userName.toLowerCase(),
-        email: email.toLowerCase(), 
+        userName,
+        email, 
         password
     })
 
@@ -59,14 +59,15 @@ const registerUser = asyncHandler(async(req,res)=>{
 
 const logInUser = asyncHandler(async (req, res) =>{
 
-    const {email, userName, password} = req.body
+    const {email, username, password} = req.body
+    console.log(email);
 
-    if (!(userName || email)) {
+    if (!username && !email) {
         throw new ApiError(400, "username or email is required")
     }
 
     const user = await User.findOne({
-        $or: [{userName}, {email}]
+        $or: [{username}, {email}]
     })
 
     if (!user) {
