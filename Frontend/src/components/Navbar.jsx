@@ -37,7 +37,7 @@ function Navbar() {
             </a>
           </div>
           <div>
-            <a href="" className='text-[19px] text-gray-900'>
+            <a href="/Product" className='text-[19px] text-gray-900'>
               Shop-Now
             </a>
           </div>

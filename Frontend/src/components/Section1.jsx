@@ -43,8 +43,8 @@ function Section1() {
           </div>
           <div className= 'mt-[10vh] text-gray-900 absolute lg:top-[70%] md:top-[50%] lg:left-[16vw] md:left-[15vw] sm:left-[10vw] sm:top-[40%] top-[40%] left-5 font-poppins'>
             <div >
-              <p className='sm:text-[16px] text-sm ' >Discover The Epitome Of</p>
-              <div className='sm:text-[20px] text-sm font-bold text-blue-700 font-style: italic' >{section.text}</div>
+              <p className='sm:text-[16px] text-sm drop-shadow-[-1px_10px_10px_rgba(0,0,0,1)] font-bold ' >Discover The Epitome Of</p>
+              <div className='sm:text-[20px] text-sm font-bold text-blue-700 drop-shadow-[-1px_10px_10px_rgba(29,78,216,1)] font-style: italic' >{section.text}</div>
               </div>
             <button className='mt-[3vh] px-4 py-1 bg-secondary text-white  rounded-md'>
               Explore
