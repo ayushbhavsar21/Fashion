@@ -54,7 +54,7 @@ function Buyerregister() {
                     </div>
                 </div>
             </div>
-            <div className="bg-primary w-[100%] h-[110vh] flex  min-[750px]:hidden  ">
+            <div className="bg-primary w-[100%] h-[115vh] flex  min-[750px]:hidden  ">
                 <div className="bg-primary">
                     <div className=" ml-[20%] w-[80%]">
                         <div className=" mt-[9vh] rounded-lg bg-tertiary w-[80%] h-[70vh] flex flex-col ">
@@ -66,29 +66,29 @@ function Buyerregister() {
                             <input className=" mt-[1vh] ml-[3vw] mr-[3vw] h-[5vh] rounded-lg " type="text" name="email" value={Email} onChange={(e) => setEmail(e.target.value)} />
                             <div className=" mt-[2vh] ml-[3vw]">Password</div>
                             <input className=" mt-[1vh] ml-[3vw] mr-[3vw] h-[5vh] rounded-lg " type="text" name="passward" value={Passward} onChange={(e) => setPassward(e.target.value)} />
-                            <button className=" ml-[40%] mt-[4vh] w-[13vw]   border-2 border-secondary drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] bg-secondary  rounded-lg text-white flex justify-center " >
-                                <p className="  text-[18px]  ">Register</p>
+                            <button className=" ml-[40%] mt-[4vh] w-[16vw]  max-[376px]:w-[18vw]  border-2 border-secondary drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] bg-secondary  rounded-lg text-white flex justify-center " >
+                                <p className="  text-[16px] max-[376px]:text-[14px] ">Register</p>
                             </button>
                             <img className="mt-[2vh] drop-shadow-2xl" src={line} alt="" />
 
-                            <button className="flex rounded-lg border-2 border-black ml-[15%] mr-[15%] items-center bg-primary drop-shadow-2xl " >
-                                <img className=" ml-[4vw] h-[3vh] w-[3vw]" src={Google} alt="Google" />
-                                <p className="  ml-[2vw] text-[17px]  ">Register with Google</p>
+                            <button className="flex rounded-lg border-2 border-black ml-[15%] mr-[15%] items-center bg-primary drop-shadow-2xl justify-around " >
+                                <img className="  h-[3vh] w-[3vw] max-[376px]:w-[4vw] " src={Google} alt="Google" />
+                                <p className="   text-[17px] max-[376px]:text-[12px]  ">Register with Google</p>
                             </button>
                         </div>
                         <div className=" mt-[4vh] w-[80%] h-[10vh] flex flex-col items-center">
-                            <div className="text-[24px]"> Already Have Account ?</div>
+                            <div className="text-[24px] max-[376px]:text-[18px]"> Already Have Account ?</div>
                             <a href="/SignIn">
-                            <button className=" mt-[2vh] flex   border-2 border-secondary drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] bg-secondary  rounded-lg text-white " >
-                                <p className="  ml-[2vw] mr-[2vw]  text-[16px]  "> SignIn </p>
+                            <button className=" mt-[2vh] flex justify-center  w-[60vw]  border-2 border-secondary drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] bg-secondary  rounded-lg text-white " >
+                                <p className="  ml-[2vw] mr-[2vw]  text-[16px] max-[376px]:text-[14px] "> SignIn </p>
                             </button>
                             </a>
                         </div>
                         <div className=" mt-[4vh] w-[80%] h-[10vh] flex flex-col items-center">
-                            <div className="text-[24px]">Want Seller's Account ?</div>
+                            <div className="text-[24px] max-[376px]:text-[18px]">Want Seller's Account ?</div>
                             <a href="/Sellerregister">
-                            <button className=" mt-[2vh] flex   border-2 border-secondary drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] bg-secondary  rounded-lg text-white " >
-                                <p className="  ml-[2vw] mr-[2vw]  text-[16px]  ">Create an Seller's Account</p>
+                            <button className=" mt-[2vh] flex justify-center  w-[60vw] border-2 border-secondary drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] bg-secondary  rounded-lg text-white " >
+                                <p className=" ml-[2vw] mr-[2vw]  text-[16px] max-[376px]:text-[14px] ">Create an Seller's Account</p>
                             </button>
                             </a>
                         </div>

@@ -51,27 +51,27 @@ function SignIn() {
                             <input className=" mt-[2vh] ml-[3vw] mr-[3vw] h-[5vh] rounded-lg " type="text" name="email" value={Email} onChange={(e) => setEmail(e.target.value)} />
                             <div className=" mt-[2vh] ml-[3vw]">Password</div>
                             <input className=" mt-[2vh] ml-[3vw] mr-[3vw] h-[5vh] rounded-lg " type="text" name="passward" value={Passward} onChange={(e) => setPassward(e.target.value)} />
-                            <button className=" ml-[37%] mt-[4vh] w-[13vw]   border-2 border-secondary drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] bg-secondary  rounded-lg text-white flex justify-center " >
-                                <p className="  text-[18px]  ">SignIn</p>
+                            <button className=" ml-[37%] mt-[4vh] w-[14vw] max-[375px]:w-[16vw]  border-2 border-secondary drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] bg-secondary  rounded-lg text-white flex justify-center " >
+                                <p className=" text-[16px] max-[375px]:text-[14px]  ">SignIn</p>
                             </button>
                             <img className="mt-[4vh] drop-shadow-2xl" src={line} alt="" />
 
-                            <button className="flex rounded-lg border-2 border-black ml-[15%] mr-[15%] items-center bg-primary drop-shadow-2xl " >
-                                <img className=" ml-[4vw] h-[3vh] w-[3vw]" src={Google} alt="Google" />
-                                <p className="  ml-[2vw] text-[17px]  ">SignIn with Google</p>
+                            <button className="flex rounded-lg border-2 border-black ml-[15%] mr-[15%] items-center bg-primary drop-shadow-2xl justify-around " >
+                                <img className="  h-[3vh] w-[3vw] max-[375px]:w-[4vw] " src={Google} alt="Google" />
+                                <p className="   text-[17px] max-[375px]:text-[14px]  ">SignIn with Google</p>
                             </button>
                         </div>
                         
                         <div className=" mt-[4vh] w-[80%] h-[10vh] flex flex-col items-center">
-                            <div className="text-[24px]">Don't Have Account ?</div>
+                            <div className="text-[24px] max-[375px]:text-[18px] ">Don't Have Account ?</div>
                             <a href="/Buyerregister">
                                 <button className="mt-[2vh]  flex   border-2 border-secondary drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] bg-secondary  rounded-lg text-white  " >
-                                    <p className=" ml-[2vw] mr-[2vw]  text-[16px]  ">Create an Buyer's Account</p>
+                                    <p className=" ml-[2vw] mr-[2vw]  text-[16px] max-[375px]:text-[14px] ">Create an Buyer's Account</p>
                                 </button>
                             </a>
                             <a href="/Sellerregister">
                             <button className=" mt-[2vh] flex   border-2 border-secondary drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] bg-secondary  rounded-lg text-white " >
-                                <p className="  ml-[2vw] mr-[2vw]  text-[16px]  ">Create an Seller's Account</p>
+                                <p className="  ml-[2vw] mr-[2vw]  text-[16px] max-[375px]:text-[14px]  ">Create an Seller's Account</p>
                             </button>
                             </a>
                         </div>
