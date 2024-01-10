@@ -20,10 +20,10 @@ const generateAccessAndRefreshToken = async(userId)=>{
 }
 const registerUser = asyncHandler(async (req,res)=>{
  
-    const {email, userName, password, fullName} = req.body;
+    const {email, userName, password} = req.body;
 
     if(
-        [userName, email, fullName, password].some(field=>{
+        [userName, email, password].some(field=>{
             field?.trim()=== ""
         })
     ){
@@ -106,8 +106,8 @@ const logInUser = asyncHandler(async(req,res)=>{
 
 const logOutUser = asyncHandler(async(req, res)=>{
     await User.findByIdAndUpdate(req.user._id, {
-        $set: {
-            refreshToken: undefined
+        $unset: {
+            refreshToken: 1
         },
     },
     {
