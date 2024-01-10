@@ -6,7 +6,7 @@ import Buyerregister from './components/Buyerregister';
 import Sellerregister from './components/Sellerregister';
 import Product from './components/Product';
 import img from './assets/Girl.png';
-// import './components/App.css'
+import './components/App.css'
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -66,7 +66,7 @@ const App = () => {
       
       <div id="spiral" className="spiral-container"></div>
       
-        <img src={img} alt="" />
+        <img className="ladyImage" src={img} alt="" />
       
       <div id="spiral2" className="spiral-container"></div>
     </div>

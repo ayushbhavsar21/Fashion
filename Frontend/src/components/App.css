@@ -21,14 +21,8 @@
    
   body,
   html {
-    height: 100%;
-    margin: 0;
-    display: inline-block;
-    justify-content: center;
-    align-items: center;
     background-color: #121212;
     /* background-color: #454887; */
-    overflow: hidden;
   }
   
   .spiral {
@@ -61,7 +55,7 @@
     animation: spiral 4s linear infinite;
     
   }
-  img{
+  .ladyImage{
     height: 50vh;
     width: 40vw;
   }
