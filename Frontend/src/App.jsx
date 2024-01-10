@@ -5,7 +5,8 @@ import Home from './pages/Home';
 import Buyerregister from './components/Buyerregister';
 import Sellerregister from './components/Sellerregister';
 import Product from './components/Product';
-import fashion from './assets/Girl.png';
+import img from './assets/Girl.png';
+// import './components/App.css'
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -31,13 +32,44 @@ const App = () => {
     }
   }, []);
 
+  const words = "FASHION•STYLE "; // Add more words if needed
+  const ANIMATION_DURATION = 3000; // Define your animation duration in milliseconds
+
+  useEffect(() => {
+    const createElements = (offset) => {
+      const characters = words.split("");
+      characters.forEach((char, i) => {
+        const div = document.createElement("div");
+        div.innerText = char;
+        div.classList.add("character");
+        div.style.animationDelay = `-${i * (ANIMATION_DURATION / 16) - offset}ms`;
+
+        if (offset >= 0) {
+          document.getElementById("spiral").appendChild(div);
+        } else {
+          document.getElementById("spiral2").appendChild(div);
+        }
+      });
+    };
+
+    createElements(0);
+    createElements(-1 * (ANIMATION_DURATION / 2));
+    
+  }, []);
+
+
   return (
     <div className="App">
       {loading ? (
         // Display loading animation or message
-        <div className='flex justify-center items-center w-[100%] h-[90vh] ' >
-           <img className='h-[95%] mt-[1vh]' src={fashion} alt="logo" /> 
-        </div>
+        <div className='Container' >
+      
+      <div id="spiral" className="spiral-container"></div>
+      
+        <img src={img} alt="" />
+      
+      <div id="spiral2" className="spiral-container"></div>
+    </div>
       ) : (
         // Display your actual content when loading is complete
         <Router>
