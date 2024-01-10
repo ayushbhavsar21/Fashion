@@ -34,7 +34,7 @@ function SignIn() {
                         <div className=" mt-[5vh] ml-[3vw]">Email</div>
                         <input className=" mt-[2vh] ml-[3vw] mr-[3vw] h-[5vh] rounded-lg " type="text" name="email" value={user.email} onChange={handleInput} />
                         <div className=" mt-[2vh] ml-[3vw]">Password</div>
-                        <input className=" mt-[2vh] ml-[3vw] mr-[3vw] h-[5vh] rounded-lg " type="text" name="passward" value={user.password} onChange={handleInput} />
+                        <input className=" mt-[2vh] ml-[3vw] mr-[3vw] h-[5vh] rounded-lg " type="text" name="password" value={user.password} onChange={handleInput} />
                         <button onClick={handleSubmit} className=" ml-[36%] mt-[2vh] w-[10vw]   border-2 border-secondary drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] bg-secondary  rounded-lg text-white flex justify-center " >
                             <p className="  text-[16px] md:text-[18px] lg:text-[22px] ">SignIn</p>
                         </button>

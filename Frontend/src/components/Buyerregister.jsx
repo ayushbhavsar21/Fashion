@@ -1,8 +1,10 @@
 import Navbar from "./Navbar";
 import { useState } from "react";
+import {useNavigate } from 'react-router-dom';
 import Clipart from "../assets/Buyerregister.svg"
 import line from "../assets/line.png"
 import Google from "../assets/Google.png"
+
 function Buyerregister() {
 
     const [user , setUser] = useState({
@@ -12,6 +14,8 @@ function Buyerregister() {
     })
 
     const handleInput = (e)=>{
+        console.log(e);
+
         const name = e.target.name;
         const value = e.target.value;
 
@@ -25,17 +29,21 @@ function Buyerregister() {
     const handleSubmit = async (e)=>{
         e.preventDefault();
 
-        const response = await axios.post('http://localhost:8000/api/v1/users/register',{
+        console.log(user);
+
+        const response = await fetch('http://localhost:8000/api/v1/users/register',{
+
+            method: "POST",
             headers: {
                "Content-Type" : "/application/json"
             },
             body: JSON.stringify(user)
         });
 
-        if(response.statusCode===200){
+        if(response.ok){
             setUser({ userName: "", email: "", password: "" })
         }
-
+        
         console.log(response);
     };
 
@@ -48,7 +56,7 @@ function Buyerregister() {
                 <img className=" ml-[5vw] drop-shadow-2xl w-[40%] mb-[8vh] " src={Clipart} alt="" />
                 <div className=" ml-[10%] w-[50%]">
                     <div className=" mt-[9vh] rounded-lg bg-tertiary w-[80%] h-[85vh] flex flex-col ">
-
+                        <form onSubmit={handleSubmit}>
                         <div className=" mt-[5vh] ml-[10vw] text-[18px] lg:text-[22px]  ">Create a Buyer's Account</div>
                         <div className=" mt-[5vh] ml-[3vw]">Name</div>
                         <input className=" mt-[2vh] ml-[3vw] mr-[3vw] h-[5vh] rounded-lg " type="text" name="userName" value={user.userName} onChange={handleInput}/>
@@ -56,10 +64,11 @@ function Buyerregister() {
                         <div className=" mt-[2vh] ml-[3vw]">Email</div>
                         <input className=" mt-[2vh] ml-[3vw] mr-[3vw] h-[5vh] rounded-lg " type="text" name="email" value={user.email} onChange={handleInput}/>
                         <div className=" mt-[2vh] ml-[3vw]">Password</div>
-                        <input className=" mt-[2vh] ml-[3vw] mr-[3vw] h-[5vh] rounded-lg " type="text" name="passward" value={user.password}  onChange={handleInput}/>
-                        <button onClick={handleSubmit} className=" ml-[36%] mt-[4vh] w-[10vw]   border-2 border-secondary drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] bg-secondary  rounded-lg text-white flex justify-center " >
+                        <input className=" mt-[2vh] ml-[3vw] mr-[3vw] h-[5vh] rounded-lg " type="text" name="password" value={user.password}  onChange={handleInput}/>
+                        <button  className=" cursor-pointer ml-[36%] mt-[4vh] w-[10vw]   border-2 border-secondary drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] bg-secondary  rounded-lg text-white flex justify-center " >
                             <p className="  text-[16px] md:text-[18px] lg:text-[22px] ">Register</p>
                         </button>
+                        </form>
                         <img className="mt-[4vh] drop-shadow-2xl" src={line} alt="" />
 
                         <button className="flex rounded-lg border-2 border-black ml-[15%] mr-[15%] items-center bg-primary drop-shadow-2xl " >
