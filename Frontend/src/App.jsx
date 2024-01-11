@@ -54,7 +54,7 @@ const App = () => {
 
     createElements(0);
     createElements(-1 * (ANIMATION_DURATION / 2));
-    
+
   }, []);
 
 
@@ -63,13 +63,13 @@ const App = () => {
       {loading ? (
         // Display loading animation or message
         <div className='Container' >
-      
-      <div id="spiral" className="spiral-container"></div>
-      
-        <img className="ladyImage" src={img} alt="" />
-      
-      <div id="spiral2" className="spiral-container"></div>
-    </div>
+
+          <div id="spiral" className="spiral-container"></div>
+
+          <img className="ladyImage" src={img} alt="" />
+
+          <div id="spiral2" className="spiral-container"></div>
+        </div>
       ) : (
         // Display your actual content when loading is complete
         <Router>
