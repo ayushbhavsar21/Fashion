@@ -55,12 +55,13 @@
     
     
     justify-content: center;
+
     align-items: center;
   
   }
   .ladyImage{
     height: 60vh;
-    width: 50vw;
+    
   }
   /* .section{
     height: 100vh;
