@@ -34,8 +34,11 @@ function Buyerregister() {
         const response = await fetch('http://localhost:8000/api/v1/users/register',{
 
             method: "POST",
+            crossDomain: true,
             headers: {
-               "Content-Type" : "/application/json"
+               "Content-Type" : "application/json",
+               Accept: "application/json",
+               "Access-Control-Allow-Origin": "*",
             },
             body: JSON.stringify(user)
         });
@@ -56,7 +59,7 @@ function Buyerregister() {
                 <img className=" ml-[5vw] drop-shadow-2xl w-[40%] mb-[8vh] " src={Clipart} alt="" />
                 <div className=" ml-[10%] w-[50%]">
                     <div className=" mt-[9vh] rounded-lg bg-tertiary w-[80%] h-[85vh] flex flex-col ">
-                        <form onSubmit={handleSubmit}>
+                        <form onSubmit={handleSubmit} method="POST">
                         <div className=" mt-[5vh] ml-[10vw] text-[18px] lg:text-[22px]  ">Create a Buyer's Account</div>
                         <div className=" mt-[5vh] ml-[3vw]">Name</div>
                         <input className=" mt-[2vh] ml-[3vw] mr-[3vw] h-[5vh] rounded-lg " type="text" name="userName" value={user.userName} onChange={handleInput}/>
