@@ -1,18 +1,22 @@
 import React from 'react'
 import section31 from '../assets/section31.png'
 import section32 from '../assets/section32.png'
+import { useTranslation } from 'react-i18next'
 function Section3() {
+
+const {t}=useTranslation()
+
   return (
     <div className='bg-primary sm:pt-0 pt-16 h-auto'>
         <div className='md:pr-12 md:text-right p-0 text-center'>
-        <h1 className='font-dancing sm:text-[36px] text-[20px] text-gray-900'><span className='sm:text-[64px] text-[40px]'>Winter</span> Collections</h1> 
-        <p className='font-playfair text-[20px] text-gray-900'>We consider your look and comfort on cold weather.</p>
+        <h1 className='font-dancing sm:text-[36px] text-[20px] text-gray-900'><span className='sm:text-[64px] text-[40px]'>{t("Winter")}</span>{t("Collections")}</h1> 
+        <p className='font-playfair text-[20px] text-gray-900'>{t("We consider your look and comfort on cold weather.")}</p>
         </div>
  <div className='flex w-full h-auto justify-around sm:flex-row flex-col'> 
       <div className='flex flex-col sm:w-[40vw] items-center w-full text-center sm:text-left justify-center'>
       <div className='relative sm:top-36 top-8'>
         <p className='font-playfair'>
-        We provide the largest clothing collection for any season. You can choose trendy or classy design according to your preferences. Our services are super fast and we update within 24 hours.
+        {t("We provide the largest clothing collection for any season. You can choose trendy or classy design according to your preferences. Our services are super fast and we update within 24 hours.")}
         </p>
       </div>
       <div className='relative bottom-24'>
@@ -22,10 +26,10 @@ function Section3() {
       </div>
       <div className='flex flex-col sm:w-[40vw] justify-center items-center text-center gap-12'>
          <div className='sm:self-end self-center'>
-         <a href="" className='font-playfair bg-tertiary border-[2px] border-quaternary px-8 py-4 rounded-2xl '>View All</a>
+         <a href="" className='font-playfair bg-tertiary border-[2px] border-quaternary px-8 py-4 rounded-2xl '>{t("View All")}</a>
          </div>
          <div>
-         <p className='font-playfair'>Our main aim is to serve our customer with better quality product. We try to understand their needs and provide them within a short period of time. We provide the largest clothing collection for any season. You can choose trendy or classy design according to your preferences. Our services are super fast and we update within 24 hours.</p>
+         <p className='font-playfair'>{t("Our main aim is to serve our customer with better quality product. We try to understand their needs and provide them within a short period of time. We provide the largest clothing collection for any season. You can choose trendy or classy design according to your preferences. Our services are super fast and we update within 24 hours.")}</p>
          </div>
       </div>
     </div>
