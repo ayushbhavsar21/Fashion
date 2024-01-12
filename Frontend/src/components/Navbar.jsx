@@ -5,8 +5,32 @@ import search from '../assets/search.png';
 import ham from '../assets/ham.png';
 import languages from '../assets/languages.png';
 import fashion from '../assets/Fashion4.svg'
+import i18next from 'i18next';
+import { useTranslation } from 'react-i18next';
+import { useEffect } from 'react';
+import LangSelector from './LangSelector';
 
 function Navbar() {
+
+  const { t } = useTranslation()
+  const [currentLang, setCurrentLang] = useState('en');
+  useEffect(() => {
+    const lang = localStorage.getItem("language") || "en";
+    console.log("Language from localStorage:", lang);
+    setCurrentLang(lang);
+    i18next.changeLanguage(lang)
+  }, [])
+  const setLang = (data) => {
+    console.log(data)
+    localStorage.setItem('language', data)
+   // window.location.reload()
+   setCurrentLang(data);
+   i18next.changeLanguage(data);
+
+  }
+
+
+
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [isSearchOpen, setSearchOpen] = useState(false);
   const [isLanguagesDropdownOpen, setLanguagesDropdownOpen] = useState(false);
@@ -33,17 +57,17 @@ function Navbar() {
         <div className='lg:flex gap-4 hidden'>
           <div>
             <a href="/" className='text-[19px] text-gray-900'>
-              Discover
+              {t("Discover")}
             </a>
           </div>
           <div>
             <a href="/Product" className='text-[19px] text-gray-900'>
-              Shop-Now
+              {t("Shop-Now")}
             </a>
           </div>
           <div>
             <a href="" className='text-[19px] text-gray-900'>
-              Orders
+              {t("Orders")}
             </a>
           </div>
         </div>
@@ -75,11 +99,7 @@ function Navbar() {
               <img src={languages} alt="" className='h-[35px] pt-2'/>
             </button>
             {isLanguagesDropdownOpen && (
-              <div className='absolute top-[12vh] right-0 w-32 bg-primary border-[2px] border-imperialred rounded shadow z-20'>
-                <div className='p-2 cursor-pointer hover:bg-gray-200'>English</div>
-                <div className='p-2 cursor-pointer hover:bg-gray-200'>Hindi</div>
-                <div className='p-2 cursor-pointer hover:bg-gray-200'>Tamil</div>
-              </div>
+                <LangSelector setLang={setLang} lang={currentLang} />
             )}
           </div>
           <div className='lg:hidden pt-2'>

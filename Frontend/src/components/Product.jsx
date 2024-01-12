@@ -4,6 +4,7 @@ import Back from "../assets/arrow-back.svg"
 import Forward from "../assets/arrow-forward.svg"
 import Bag from "../assets/bag.png"
 import Productimage from "../assets/section41.jpg"
+
 function Product() {
     return (
         <>
