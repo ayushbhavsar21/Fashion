@@ -95,12 +95,9 @@ function Navbar() {
             </a>
           </div>
           <div>
-            <button onClick={toggleLanguagesDropdown}>
-              <img src={languages} alt="" className='h-[35px] pt-2'/>
-            </button>
-            {isLanguagesDropdownOpen && (
+            
                 <LangSelector setLang={setLang} lang={currentLang} />
-            )}
+           
           </div>
           <div className='lg:hidden pt-2'>
             <button onClick={toggleDropdown}>
