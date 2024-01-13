@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import SignIn from './components/SignIn';
 import Home from './pages/Home';
 import Buyerregister from './components/Buyerregister';
 import Sellerregister from './components/Sellerregister';
 import Product from './components/Product';
-import img from './assets/Girl.png';
+import img from './assets/Girl.png'
+import BuyerSignIn from './components/BuyerSignIn';
+import SellerSignIn from './components/SellerSignIn';
 import './components/App.css'
 
 const App = () => {
@@ -75,9 +76,15 @@ const App = () => {
         <Router>
           <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route exact path="/SignIn" element={<SignIn />} />
-            <Route exact path="/Buyerregister" element={<Buyerregister />} />
-            <Route exact path="/Sellerregister" element={<Sellerregister />} />
+            <Route exact path="/SignIn/" >
+            <Route exact path="Buyer" element={<BuyerSignIn/>} />
+            <Route exact path="Seller" element={<SellerSignIn/>} />
+            </Route>
+            <Route exact path="/Register/">
+            <Route exact path="Buyer" element={<Buyerregister />} />
+            <Route exact path="Seller" element={<Sellerregister />} />
+            </Route>
+            
             <Route exact path="/Product" element={<Product />} />
           </Routes>
         </Router>

@@ -32,7 +32,7 @@ function Buyerregister() {
         console.log(user);
 
         try{
-            const response = await fetch('http://localhost:8000/api/v1/users/register',{
+            const response = await fetch('http://localhost:8000/api/v1/users/register/buyer',{
 
             method: "POST",
             headers: {
@@ -46,7 +46,7 @@ function Buyerregister() {
         }
         
         console.log(response);
-        
+
         }catch(error){
 
         }
@@ -96,7 +96,7 @@ function Buyerregister() {
                     </div>
                     <div className=" w-[80%] flex flex-col items-center gap-1 pt-2">
                         <div className="">Already Have Account ?</div>
-                        <a href="/SignIn">
+                        <a href="/SignIn/Buyer">
                         <button className="flex   border-2 border-secondary drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] bg-secondary  rounded-md px-3 py-1 text-white" >
                                 <p className=" ">SignIn</p>
                             </button>
@@ -104,7 +104,7 @@ function Buyerregister() {
                     </div>
                     <div className=" flex flex-col items-center gap-2 pt-2 lg:pb-0 pb-4">
                         <div className="]">Don't Have Account ?</div>
-                        <a href="/Sellerregister">
+                        <a href="/Register/seller">
                             <button className=" flex   border-2 border-secondary drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] bg-secondary  rounded-md px-3 py-1 text-white " >
                                 <p className=" ">Create a Seller's Account</p>
                             </button>

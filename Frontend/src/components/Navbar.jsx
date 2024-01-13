@@ -85,7 +85,7 @@ function Navbar() {
             </button>
           </div>
           <div className='hidden lg:block'>
-            <a href="/SignIn">
+            <a href="/SignIn/Buyer">
               <img src={login} alt="" className='h-[23px]' />
             </a>
           </div>
@@ -109,7 +109,7 @@ function Navbar() {
       {isDropdownOpen && (
         <div className='w-full h-[100vh] flex flex-col gap-6 pt-4 bg-primary'>
           <div >
-            <a href="/SignIn" className='flex text-[18px] text-gray-900 pl-2 items-center gap-2'>
+            <a href="/SignIn/Buyer" className='flex text-[18px] text-gray-900 pl-2 items-center gap-2'>
               <p>Login / Sign Up</p>
               <img src={login} alt="" className='h-[23px]' />
             </a>

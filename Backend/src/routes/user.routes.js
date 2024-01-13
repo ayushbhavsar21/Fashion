@@ -1,12 +1,21 @@
 import { Router } from "express";
-import { logInUser, logOutUser, registerUser } from "../controllers/user.controllers.js";
-import { verifyJWT } from "../middlewares/auth.middleware.js";
+import { logInBuyer, logOutBuyer, registerBuyer } from "../controllers/buyer.controllers.js";
+import { registerSeller, logInSeller, logOutSeller } from "../controllers/seller.controllers.js";
+import { verifySellerJWT } from "../middlewares/sellerAuth.middleware.js";
+import { verifyBuyerJWT } from "../middlewares/buyerAuth.middleware.js";
 
 const userRouter = Router();
 
-userRouter.route("/register").post(registerUser)
-userRouter.route("/login").post(logInUser)
+//Register
+userRouter.route("/register/buyer").post(registerBuyer)
+userRouter.route("/register/seller").post(registerSeller)
 
-userRouter.route("/logout").post(verifyJWT, logOutUser)
+//Login
+userRouter.route("/login/buyer").post(logInBuyer)
+userRouter.route("/login/seller").post(logInSeller)
+
+//Logout
+userRouter.route("/logout/buyer").post(verifyBuyerJWT, logOutBuyer);
+userRouter.route("/logout/seller").post(verifySellerJWT, logOutSeller);
 
 export default userRouter;

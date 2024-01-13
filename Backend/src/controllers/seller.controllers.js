@@ -1,11 +1,11 @@
 import { asyncHandler } from "../utils/asyncHandler.js";
-import { User } from "../models/user.model.js"
 import { ApiError } from "../utils/ApiError.js";
 import { ApiResponse } from "../utils/ApiResonse.js";
+import { Seller } from "../models/seller.model.js";
 
 const generateAccessAndRefreshToken = async(userId)=>{
     try {
-        const user = await User.findById(userId);
+        const user = await Seller.findById(userId);
         const accessToken = user.generateAccessToken();
         const refreshToken = user.generateRefreshToken();
 
@@ -18,7 +18,8 @@ const generateAccessAndRefreshToken = async(userId)=>{
         throw new ApiError(500, "Something went wrong while generating refresh and access token!!");
     }
 }
-const registerUser = asyncHandler(async (req,res)=>{
+
+const registerSeller = asyncHandler(async (req,res)=>{
  
     const {email, userName, password} = req.body;
 
@@ -30,21 +31,21 @@ const registerUser = asyncHandler(async (req,res)=>{
         throw new ApiError(400,"All fields are required!!")
     }
 
-    const existedUser = await User.findOne({
+    const existedSeller = await Seller.findOne({
         $or: [{email}, {userName}]
     })
 
-    if(existedUser){
+    if(existedSeller){
         throw new ApiError(400, "User with email or username already exists")
     }
 
-    const user = await User.create({
+    const user = await Seller.create({
         email,
         password,
         userName
     })
 
-    const createdUser = await User.findById(user._id).select(
+    const createdUser = await Seller.findById(user._id).select(
         "-password -refreshToken"
     )
 
@@ -57,7 +58,7 @@ const registerUser = asyncHandler(async (req,res)=>{
     );
 })
 
-const logInUser = asyncHandler(async(req,res)=>{
+const logInSeller = asyncHandler(async(req,res)=>{
 
     const {email, userName, password} = req.body;
 
@@ -65,7 +66,7 @@ const logInUser = asyncHandler(async(req,res)=>{
         throw new ApiError(400, "username or email is required!!");
     }
 
-    const user = await User.findOne({
+    const user = await Seller.findOne({
         $or: [{email}, {userName}]
     })
 
@@ -82,7 +83,7 @@ const logInUser = asyncHandler(async(req,res)=>{
 
    const {accessToken, refreshToken} = await generateAccessAndRefreshToken(user._id);
 
-   const loggedInUser = await User.findById(user._id) .select("-password -refreshToken");
+   const loggedInUser = await Seller.findById(user._id) .select("-password -refreshToken");
 
    const options = {
      httpOnly: true,
@@ -104,8 +105,8 @@ const logInUser = asyncHandler(async(req,res)=>{
 
 })
 
-const logOutUser = asyncHandler(async(req, res)=>{
-    await User.findByIdAndUpdate(req.user._id, {
+const logOutSeller = asyncHandler(async(req, res)=>{
+    await Seller.findByIdAndUpdate(req.user._id, {
         $unset: {
             refreshToken: 1
         },
@@ -128,7 +129,7 @@ const logOutUser = asyncHandler(async(req, res)=>{
 
 
 export {
-    registerUser,
-    logInUser,
-    logOutUser
+    registerSeller,
+    logInSeller,
+    logOutSeller
 };
