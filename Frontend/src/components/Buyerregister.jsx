@@ -55,43 +55,56 @@ function Buyerregister() {
 
 
             <Navbar />
-            <div className="bg-primary h-[130vh] w-[100%] flex max-[750px]:hidden ">
-                <img className=" ml-[5vw] drop-shadow-2xl w-[40%] mb-[8vh] " src={Clipart} alt="" />
-                <div className=" ml-[10%] w-[50%]">
-                    <div className=" mt-[9vh] rounded-lg bg-tertiary w-[80%] h-[85vh] flex flex-col ">
+            <div className="bg-primary lg:h-[88.9vh] h-auto  w-full flex font-playfair">
+                <div className="lg:flex justify-center items w-[50vw] hidden">
+                <img className="drop-shadow-2xl w-[80%]  " src={Clipart} alt="" />
+
+                </div>
+                <div className="flex flex-col justify-start items-center lg:pt-0 pt-8">
+                    <div className="rounded-[35px] bg-tertiary lg:w-[70%] w-[90%] gap-1 lg:h-[65vh] h-auto flex flex-col  p-6">
+                        <div className="self-center font-semibold text-lg">Create a Buyer's Account</div>
                         <form onSubmit={handleSubmit} method="POST">
-                        <div className=" mt-[5vh] ml-[10vw] text-[18px] lg:text-[22px]  ">Create a Buyer's Account</div>
-                        <div className=" mt-[5vh] ml-[3vw]">Name</div>
-                        <input className=" mt-[2vh] ml-[3vw] mr-[3vw] h-[5vh] rounded-lg " type="text" name="userName" value={user.userName} onChange={handleInput}/>
+                        <div>
+                        <div className=" pl-1 pb-2">Name</div>
+                        <input className="rounded-lg h-[40px] w-[100%]" type="text" name="userName" value={user.userName} onChange={handleInput}/>
+                        </div>
+                       <div>
+                       <div className="pl-1 pb-2">Email</div>
+                        <input className="rounded-lg h-[40px] w-[100%]" type="text" name="email" value={user.email} onChange={handleInput}/>
+                       </div>
 
-                        <div className=" mt-[2vh] ml-[3vw]">Email</div>
-                        <input className=" mt-[2vh] ml-[3vw] mr-[3vw] h-[5vh] rounded-lg " type="text" name="email" value={user.email} onChange={handleInput}/>
-                        <div className=" mt-[2vh] ml-[3vw]">Password</div>
-                        <input className=" mt-[2vh] ml-[3vw] mr-[3vw] h-[5vh] rounded-lg " type="text" name="password" value={user.password}  onChange={handleInput}/>
-                        <button  className=" cursor-pointer ml-[36%] mt-[4vh] w-[10vw]   border-2 border-secondary drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] bg-secondary  rounded-lg text-white flex justify-center " >
-                            <p className="  text-[16px] md:text-[18px] lg:text-[22px] ">Register</p>
+                       <div>
+
+                       <div className="pl-1 pb-2">Password</div>
+                        <input className="rounded-lg h-[40px] w-[100%]" type="text" name="password" value={user.password}  onChange={handleInput}/>
+                       </div>
+                       <div className="self-center lg:pl-[40%] pl-[35%] pt-4">
+                       <button  className="drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] px-5 py-2  bg-secondary text-white  rounded-md" >
+                           Register
                         </button>
+                       </div>
+                        
                         </form>
-                        <img className="mt-[4vh] drop-shadow-2xl" src={line} alt="" />
+                        <img className=" drop-shadow-2xl relative lg:bottom-4" src={line} alt="" />
 
-                        <button className="flex rounded-lg border-2 border-black ml-[15%] mr-[15%] items-center bg-primary drop-shadow-2xl " >
-                            <img className=" ml-[4vw] h-[5vh] w-[3vw]" src={Google} alt="Google" />
-                            <p className="  ml-[2vw] text-[16px] md:text-[18px] lg:text-[22px] ">Register with Google</p>
+                        <button className="flex justify-center gap-4 rounded-lg border-[1px] border-black items-center bg-primary drop-shadow-2xl w-[80%] self-center p-2 relative lg:bottom-12" >
+                            <img className="h-[32px]" src={Google} alt="Google" />
+                            <p className=" ">Register with Google</p>
                         </button>
                     </div>
-                    <div className=" mt-[4vh] w-[80%] h-[10vh] flex flex-col items-center">
-                        <div className="text-[24px]">Already Have Account ?</div>
+                    <div className=" w-[80%] flex flex-col items-center gap-1 pt-2">
+                        <div className="">Already Have Account ?</div>
                         <a href="/SignIn">
-                        <button className=" mt-[2vh] flex   border-2 border-secondary drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] bg-secondary  rounded-lg text-white " >
-                                <p className="  w-[24vw] text-[14px] max-[1100px]:text-[16px] xl:text-[22px] ">SignIn</p>
+                        <button className="flex   border-2 border-secondary drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] bg-secondary  rounded-md px-3 py-1 text-white" >
+                                <p className=" ">SignIn</p>
                             </button>
                         </a>
                     </div>
-                    <div className=" mt-[4vh] w-[80%] h-[10vh] flex flex-col items-center">
-                        <div className="text-[24px]">Don't Have Account ?</div>
+                    <div className=" flex flex-col items-center gap-2 pt-2 lg:pb-0 pb-4">
+                        <div className="]">Don't Have Account ?</div>
                         <a href="/Sellerregister">
-                            <button className=" mt-[2vh] flex   border-2 border-secondary drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] bg-secondary  rounded-lg text-white " >
-                                <p className=" w-[24vw] text-[14px] max-[1100px]:text-[16px] xl:text-[22px] ">Create a Seller's Account</p>
+                            <button className=" flex   border-2 border-secondary drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] bg-secondary  rounded-md px-3 py-1 text-white " >
+                                <p className=" ">Create a Seller's Account</p>
                             </button>
                         </a>
                     </div>
