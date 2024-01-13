@@ -60,7 +60,7 @@ function Buyerregister() {
                 <img className="drop-shadow-2xl w-[80%]  " src={Clipart} alt="" />
 
                 </div>
-                <div className="flex flex-col justify-start items-center lg:pt-0 pt-8">
+                <div className="flex flex-col justify-start items-center lg:pt-2 pt-8">
                     <div className="rounded-[35px] bg-tertiary lg:w-[70%] w-[90%] gap-1 lg:h-[65vh] h-auto flex flex-col  p-6">
                         <div className="self-center font-semibold text-lg">Create a Buyer's Account</div>
                         <form onSubmit={handleSubmit} method="POST">
