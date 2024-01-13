@@ -10,10 +10,6 @@ function SignIn() {
         password: ""
     })
 
-    const handleSubmit = (e)=>{
-        e.preventDefault();
-    }
-
     const handleInput = (e) =>{
         const name = e.target.name;
         const value = e.target.value;
@@ -23,6 +19,36 @@ function SignIn() {
             [name] : value
         })
     }
+
+    const handleSubmit = async(e)=>{
+        e.preventDefault();
+
+        console.log(user);
+
+        try {
+            const response = await fetch('http://localhost:8000/api/v1/users/login',{
+            method: "POST",
+            crossDomain: true,
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(user)
+        })
+
+        if(response.ok){
+            setUser({
+                email: "",
+                password: ""
+            })
+        }
+
+        console.log(response);
+        
+        } catch (error) {
+            
+        }
+    }
+
     return (
         < >
 
@@ -34,6 +60,7 @@ function SignIn() {
                 </div>
                 <div className="lg:w-[50vw] md:w-[60vw] sm:w-[75vw] w-[95vw] flex flex-col lg:justify-start pt-2 lg:items-start items-center justify-center">
                     <div className="rounded-[35px] bg-tertiary sm:w-[70%] w-[100%] h-[62vh] flex flex-col gap-1 p-8">
+                        <form onSubmit={handleSubmit}>
                         <div className="">
                         <div className="pl-1 pb-2">Email</div>
                         <input className="rounded-lg h-[45px] w-[100%]" type="text" name="email" value={user.email} onChange={handleInput} />
@@ -44,9 +71,10 @@ function SignIn() {
                         <input className="h-[45px] w-[100%]  rounded-lg " type="text" name="password" value={user.password} onChange={handleInput} />
                         </div>
 
-                        <button onClick={handleSubmit} className="drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] px-4 py-3 w-[120px] bg-secondary text-white  rounded-md self-center mt-4" >
+                        <button className="drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] px-4 py-3 w-[120px] bg-secondary text-white  rounded-md self-center mt-4" >
                            SignIn
                         </button>
+                        </form>
 
                         <img className=" drop-shadow-2xl " src={line} alt="" />
 
