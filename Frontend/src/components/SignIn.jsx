@@ -27,9 +27,9 @@ function SignIn() {
         < >
 
             <Navbar />
-            <div className="bg-primary h-[87vh] w-[100%] flex justify-around font-playfair">
+            <div className="bg-primary h-[87.9vh] w-[100%] flex justify-around font-playfair">
                 <div className="w-[50vw] lg:flex justify-end items-center hidden">
-                <img className="drop-shadow-2xl w-[90%] relative left-16 bottom-16" src={SignInclipart} alt="" />
+                <img className="drop-shadow-2xl w-[90%] relative left-16 bottom-16 xl:bottom-4" src={SignInclipart} alt="" />
                  
                 </div>
                 <div className="lg:w-[50vw] md:w-[60vw] sm:w-[75vw] w-[95vw] flex flex-col lg:justify-start pt-2 lg:items-start items-center justify-center">
