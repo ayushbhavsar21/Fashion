@@ -1,6 +1,4 @@
-import Navbar from "./Navbar";
 import { useState } from "react";
-import SignInclipart from "../assets/SignIn-Clipart.svg"
 import line from "../assets/line.png"
 import Google from "../assets/googleLogo.svg"
 
@@ -53,14 +51,10 @@ function SellerSignIn() {
     return (
         < >
 
-            <Navbar />
-            <div className="bg-primary h-[88.9vh] w-[100%] flex justify-around font-playfair">
-                <div className="w-[50vw] lg:flex justify-end items-center hidden">
-                <img className="drop-shadow-2xl w-[90%] relative left-16 bottom-16 xl:bottom-4" src={SignInclipart} alt="" />
-                 
-                </div>
-                <div className="lg:w-[50vw] md:w-[60vw] sm:w-[75vw] w-[95vw] flex flex-col lg:justify-start pt-2 lg:items-start items-center justify-center">
-                    <div className="rounded-[35px] bg-tertiary sm:w-[70%] w-[100%] h-[62vh] flex flex-col gap-1 p-8">
+          
+            <div className="bg-primary h-[88.9vh] w-[100%] flex justify-center font-playfair">
+                <div className="w-[90%] flex flex-col pt-8 items-center justify-start">
+                    <div className="rounded-[35px] bg-slate-200 sm:w-[70%] w-[100%] h-[68vh] flex flex-col gap-1 p-8">
                     <div className="self-center font-semibold text-lg">Seller SignIn</div>
                         <form onSubmit={handleSubmit}>
                         <div className="">
@@ -72,10 +66,12 @@ function SellerSignIn() {
                         <div className="pl-1 pb-2">Password</div>
                         <input className="h-[45px] w-[100%]  rounded-lg " type="text" name="password" value={user.password} onChange={handleInput} />
                         </div>
-
+                        <div className="flex justify-center">
                         <button className="drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] px-4 py-3 w-[120px] bg-secondary text-white  rounded-md self-center mt-4" >
                            SignIn
                         </button>
+                        </div>
+                        
                         </form>
 
                         <img className=" drop-shadow-2xl " src={line} alt="" />
@@ -85,18 +81,14 @@ function SellerSignIn() {
                             <p className="">Sign In with Google</p>
                         </button>
                     </div>
-                    <div className=" w-[80%] flex flex-col items-center lg:pr-12 mt-4 gap-3">
+                    <div className=" w-[80%] flex flex-col items-center justify-center  mt-4 gap-3">
                         <div className="">Don't Have Account ?</div>
-                        <a href="/Register/Buyer">
+                        <a href="/Register" className="lg:mb-0 mb-4">
                             <button className="flex   border-2 border-secondary drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] bg-secondary  rounded-md text-white  px-3 py-2" >
-                                <p className="">Create an Buyer's Account</p>
+                                <p className="">Create an Account</p>
                             </button>
                         </a>
-                        <a href="/Register/Seller">
-                            <button className=" flex   border-2 border-secondary drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] bg-secondary  rounded-md px-3 py-2 text-white " >
-                                <p className="  ">Create an Seller's Account</p>
-                            </button>
-                        </a>
+                    
                     </div>
                 </div>
             </div>
