@@ -57,19 +57,19 @@ function Buyerregister() {
             <div className="bg-primary lg:h-[88.9vh] h-auto  w-[100%] flex font-playfair">
 
                 <div className="flex flex-col justify-start items-center  w-[100%] h-[100%] pt-4">
-                    <div className="rounded-[35px] bg-tertiary  sm:w-[70%] w-[90%] lg:h-[74vh] gap-1 flex flex-col p-6">
+                    <div className="rounded-[35px] bg-tertiary  sm:w-[70%] w-[90%] lg:h-[74vh] sm:gap-1 gap-4 flex flex-col p-6">
                         <div className="self-center font-semibold text-lg">Create a Buyer's Account</div>
                         <form onSubmit={handleSubmit}>
-                            <div>
+                            <div className="sm:pb-0 pb-2">
                                 <div className=" pl-1 pb-2">Name</div>
                                 <input className="rounded-lg h-[40px] w-[100%]" type="text" name="userName" value={user.userName} onChange={handleInput} />
                             </div>
-                            <div>
+                            <div className="sm:pb-0 pb-2">
                                 <div className="pl-1 pb-2">Email</div>
                                 <input className="rounded-lg h-[40px] w-[100%]" type="text" name="email" value={user.email} onChange={handleInput} />
                             </div>
 
-                            <div>
+                            <div className="sm:pb-0 pb-2">
 
                                 <div className="pl-1 pb-2">Password</div>
                                 <input className="rounded-lg h-[40px] w-[100%]" type="text" name="password" value={user.password} onChange={handleInput} />
@@ -85,7 +85,7 @@ function Buyerregister() {
 
                         <button className="flex justify-center gap-4 rounded-lg border-[1px] border-black items-center bg-primary drop-shadow-2xl w-[80%] self-center p-2 relative lg:bottom-12" >
                             <img className="h-[32px]" src={Google} alt="Google" />
-                            <p className=" ">Register with Google</p>
+                            <p className=" sm:text-lg text-[14px]">Register with Google</p>
                         </button>
                     </div>
                     <div className=" w-[80%] flex flex-col items-center gap-1 pt-2 lg:mb-0 mb-4">
