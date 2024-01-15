@@ -54,15 +54,15 @@ function BuyerSignIn() {
           
             <div className="bg-primary lg:h-[88.9vh] h-auto w-[100%] flex justify-around font-playfair">
                 <div className=" w-[90%] flex flex-col lg:justify-start pt-8 items-center justify-center">
-                    <div className="rounded-[35px] bg-tertiary sm:w-[70%] w-[100%] lg:h-[68vh] h-auto flex flex-col gap-1 p-8">
+                    <div className="rounded-[35px] bg-tertiary sm:w-[70%] w-[100%] lg:h-[68vh] h-auto flex flex-col sm:gap-1 gap-4 p-8">
                     <div className="self-center font-semibold text-lg">Buyer SignIn</div>
                         <form onSubmit={handleSubmit}>
-                        <div className="">
+                        <div className="sm:pb-0 pb-2">
                         <div className="pl-1 pb-2">Email</div>
                         <input className="rounded-lg h-[45px] w-[100%]" type="text" name="email" value={user.email} onChange={handleInput} />
                         </div>
                         
-                        <div>
+                        <div className="sm:pb-0 pb-2">
                         <div className="pl-1 pb-2">Password</div>
                         <input className="h-[45px] w-[100%]  rounded-lg " type="text" name="password" value={user.password} onChange={handleInput} />
                         </div>
@@ -78,7 +78,7 @@ function BuyerSignIn() {
 
                         <button className="flex justify-center gap-4 rounded-lg border-[1px] border-black items-center bg-primary drop-shadow-2xl w-[80%] self-center p-2" >
                             <img className="h-[32px]" src={Google} alt="Google" />
-                            <p className="">Sign In with Google</p>
+                            <p className="sm:text-lg text-[14px]">Sign In with Google</p>
                         </button>
                     </div>
                     <div className=" w-[80%] flex flex-col justify-center items-center mt-4 gap-3">

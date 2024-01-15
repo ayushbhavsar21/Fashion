@@ -56,18 +56,18 @@ function Sellerregister() {
 
             <div className="bg-primary lg:h-[88.9vh] h-auto  w-full flex font-playfair">
                 <div className="flex flex-col justify-center items-center w-[100%] h-[100%] pt-4">
-                    <div className=" rounded-[35px] bg-slate-200 sm:w-[70%] w-[90%] lg:h-[74vh] gap-1 flex flex-col p-6">
+                    <div className=" rounded-[35px] bg-slate-200 sm:w-[70%] w-[90%] lg:h-[74vh] sm:gap-1 gap-4 flex flex-col p-6">
 
                         <div className=" self-center font-semibold text-lg ">Create a Seller's Account</div>
 
                         <form onSubmit={handleSubmit}>
                         <div className=" pl-1 pb-2">Company Name / Business</div>
-                        <input className=" rounded-lg h-[40px] w-[100%]" type="text" name="userName" value={user.userName} onChange={handleInput} />
+                        <input className=" rounded-lg h-[40px] w-[100%] sm:mb-0 mb-2" type="text" name="userName" value={user.userName} onChange={handleInput} />
 
                         <div className=" pl-1 pb-2">Email</div>
-                        <input className=" rounded-lg h-[40px] w-[100%]" type="text" name="email" value={user.email} onChange={handleInput} />
+                        <input className=" rounded-lg h-[40px] w-[100%] sm:mb-0 mb-2" type="text" name="email" value={user.email} onChange={handleInput} />
                         <div className=" pl-1 pb-2">Password</div>
-                        <input className=" rounded-lg h-[40px] w-[100%] " type="text" name="password" value={user.password} onChange={handleInput} />
+                        <input className=" rounded-lg h-[40px] w-[100%] sm:mb-0 mb-2 " type="text" name="password" value={user.password} onChange={handleInput} />
                         <div className="self-center lg:pl-[40%] pl-[35%] pt-4">
                        <button  className="drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] px-5 py-2  bg-secondary text-white  rounded-md" >
                            Register
@@ -79,7 +79,7 @@ function Sellerregister() {
 
                         <button className="flex justify-center gap-4 rounded-lg border-[1px] border-black items-center bg-primary drop-shadow-2xl w-[80%] self-center p-2 relative lg:bottom-12" >
                             <img className="h-[32px]" src={Google} alt="Google" />
-                            <p className=" ">Register with Google</p>
+                            <p className="sm:text-lg text-[14px] ">Register with Google</p>
                         </button>
                     </div>
                     <div className=" w-[80%] flex flex-col items-center gap-1 pt-2 lg:mb-0 mb-4">
