@@ -3,7 +3,8 @@ import line from "../assets/line.png"
 import Google from "../assets/googleLogo.svg"
 
 function BuyerSignIn() {
-    
+
+    const [Error, setError] = useState("");
     const [user, setUser] = useState({
         email: "",
         password: ""
@@ -40,11 +41,12 @@ function BuyerSignIn() {
                 password: ""
             })
         }
+        else{
+            setError(response.error);
+        }
 
-        console.log(response);
-        
         } catch (error) {
-            
+            setError(error);
         }
     }
 
@@ -80,6 +82,8 @@ function BuyerSignIn() {
                             <img className="h-[32px]" src={Google} alt="Google" />
                             <p className="sm:text-lg text-[14px]">Sign In with Google</p>
                         </button>
+
+                        <div className=" text-red-600 flex justify-center pt-4">{Error}</div>
                     </div>
                     <div className=" w-[80%] flex flex-col justify-center items-center mt-4 gap-3">
                         <div className="">Don't Have Account ?</div>
