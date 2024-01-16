@@ -9,8 +9,11 @@ import i18next from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { useEffect } from 'react';
 import LangSelector from './LangSelector';
+import { useAuth } from '../contexts/AuthContext';
 
 function Navbar() {
+
+  const {isLoggedIn} = useAuth();
 
   const { t } = useTranslation()
   const [currentLang, setCurrentLang] = useState('en');
@@ -50,9 +53,11 @@ function Navbar() {
   return (
     <>
       <div className='h-[11vh] flex justify-between items-center bg-primary sm:p-8 p-3 font-playfair'>
-        <div>
-          {/* <h1 className='sm:text-[22px] text-[18px] text-imperialred font-bold'>FASHION</h1> */}
+        <div><a href="/">
           <img className='sm:h-[12vh] h-[10vh]' src={fashion} alt="FASHION" />
+        </a>
+          {/* <h1 className='sm:text-[22px] text-[18px] text-imperialred font-bold'>FASHION</h1> */}
+          
         </div>
         <div className='lg:flex gap-4 hidden'>
           <div>
@@ -99,6 +104,24 @@ function Navbar() {
                 <LangSelector setLang={setLang} lang={currentLang} />
            
           </div>
+          {isLoggedIn ? (
+            <a href="/Logout">
+              <button className="drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] px-4 py-3 w-[120px] bg-secondary text-white  rounded-md  mt-4" >
+               LogOut
+              </button>
+            </a>
+            
+          ):(
+            <a href="/SignIn">
+              <button className="drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] px-4 py-3 w-[120px] bg-secondary text-white  rounded-md  mt-4" >
+               SignIn
+            </button>
+            </a>
+          )
+
+          }
+          
+          
           <div className='lg:hidden pt-2'>
             <button onClick={toggleDropdown}>
               <img src={ham} alt="Menu" />
@@ -123,7 +146,7 @@ function Navbar() {
             <hr className="absolute left-2 right-2 border-gray-400 lg:hidden my-2" />
           </div>
           <div>
-            <a href="" className='text-[18px] text-gray-900 pl-2'>
+            <a href="/Product" className='text-[18px] text-gray-900 pl-2'>
               Shop-Now
             </a>
             <hr className="absolute left-2 right-2 border-gray-400 lg:hidden my-2" />

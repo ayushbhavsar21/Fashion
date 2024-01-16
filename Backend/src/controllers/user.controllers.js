@@ -1,11 +1,11 @@
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { ApiError } from "../utils/ApiError.js";
 import { ApiResponse } from "../utils/ApiResonse.js";
-import { Seller } from "../models/seller.model.js";
+import { User } from "../models/user.model.js";
 
 const generateAccessAndRefreshToken = async(userId)=>{
     try {
-        const user = await Seller.findById(userId);
+        const user = await User.findById(userId);
         const accessToken = user.generateAccessToken();
         const refreshToken = user.generateRefreshToken();
 
@@ -19,9 +19,9 @@ const generateAccessAndRefreshToken = async(userId)=>{
     }
 }
 
-const registerSeller = asyncHandler(async (req,res)=>{
+const registerUser = asyncHandler(async (req,res)=>{
  
-    const {email, userName, password} = req.body;
+    const {email, userName, password, role} = req.body;
 
     if(
         [userName, email, password].some(field=>{
@@ -31,21 +31,22 @@ const registerSeller = asyncHandler(async (req,res)=>{
         throw new ApiError(400,"All fields are required!!")
     }
 
-    const existedSeller = await Seller.findOne({
+    const existedBuyer = await User.findOne({
         $or: [{email}, {userName}]
     })
 
-    if(existedSeller){
+    if(existedBuyer){
         throw new ApiError(400, "User with email or username already exists")
     }
 
-    const user = await Seller.create({
+    const user = await User.create({
         email,
         password,
-        userName
+        userName,
+        role
     })
 
-    const createdUser = await Seller.findById(user._id).select(
+    const createdUser = await User.findById(user._id).select(
         "-password -refreshToken"
     )
 
@@ -58,7 +59,7 @@ const registerSeller = asyncHandler(async (req,res)=>{
     );
 })
 
-const logInSeller = asyncHandler(async(req,res)=>{
+const logInUser = asyncHandler(async(req,res)=>{
 
     const {email, userName, password} = req.body;
 
@@ -66,7 +67,7 @@ const logInSeller = asyncHandler(async(req,res)=>{
         throw new ApiError(400, "username or email is required!!");
     }
 
-    const user = await Seller.findOne({
+    const user = await User.findOne({
         $or: [{email}, {userName}]
     })
 
@@ -83,7 +84,7 @@ const logInSeller = asyncHandler(async(req,res)=>{
 
    const {accessToken, refreshToken} = await generateAccessAndRefreshToken(user._id);
 
-   const loggedInUser = await Seller.findById(user._id) .select("-password -refreshToken");
+   const loggedInUser = await User.findById(user._id) .select("-password -refreshToken");
 
    const options = {
      httpOnly: true,
@@ -105,8 +106,8 @@ const logInSeller = asyncHandler(async(req,res)=>{
 
 })
 
-const logOutSeller = asyncHandler(async(req, res)=>{
-    await Seller.findByIdAndUpdate(req.user._id, {
+const logOutUser = asyncHandler(async(req, res)=>{
+    await User.findByIdAndUpdate(req.user._id, {
         $unset: {
             refreshToken: 1
         },
@@ -129,7 +130,7 @@ const logOutSeller = asyncHandler(async(req, res)=>{
 
 
 export {
-    registerSeller,
-    logInSeller,
-    logOutSeller
+    registerUser,
+    logInUser,
+    logOutUser
 };

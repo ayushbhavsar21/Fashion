@@ -2,7 +2,7 @@ import {Schema, model} from 'mongoose'
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
-const sellerSchema = new Schema({
+const userSchema = new Schema({
   userName: {
     type: String,
     required: true,
@@ -22,23 +22,29 @@ const sellerSchema = new Schema({
     type: String,
     required: [true, "Password is required!!"],
   },
+  role: {
+    type: String,
+    enum: ['buyer', 'seller'], 
+    default: 'buyer', 
+    required: true,
+  },
   refreshToken: {
     type: String
   },
 },{timestamps: true})
 
-sellerSchema.pre("save", async function (next) {
+userSchema.pre("save", async function (next) {
   if(!this.isModified("password")) return next();
 
   this.password = await bcrypt.hash(this.password, 10)
   next()
 })
 
-sellerSchema.methods.isPasswordCorrect = async function(password){
+userSchema.methods.isPasswordCorrect = async function(password){
   return await bcrypt.compare(password, this.password);
 }
 
-sellerSchema.methods.generateAccessToken = function(){
+userSchema.methods.generateAccessToken = function(){
   return jwt.sign({
     _id: this._id,
     email: this.email,
@@ -51,7 +57,7 @@ sellerSchema.methods.generateAccessToken = function(){
   })
 }
 
-sellerSchema.methods.generateRefreshToken = function(){
+userSchema.methods.generateRefreshToken = function(){
   return jwt.sign({
     _id: this._id,
   },
@@ -61,4 +67,4 @@ sellerSchema.methods.generateRefreshToken = function(){
   })
 }
 
-export const Seller = model("Seller", sellerSchema)
+export const User = model("User", userSchema)

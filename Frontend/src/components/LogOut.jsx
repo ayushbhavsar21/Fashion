@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import {Navigate} from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
 
 const LogOut = () => {
 
-    
-  return (
-    <button className="drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] px-4 py-3 w-[120px] bg-secondary text-white  rounded-md  mt-4" >
-    SignIn 
-    </button>
-  )
+    const {LogOut} = useAuth();
+
+    useEffect(()=>{
+        LogOut();
+    }, [LogOut]);
+
+    return <Navigate to="/"/>
 }
 
 export default LogOut
