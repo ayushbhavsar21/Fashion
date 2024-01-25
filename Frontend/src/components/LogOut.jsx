@@ -4,11 +4,11 @@ import { useAuth } from '../contexts/AuthContext';
 
 const LogOut = () => {
 
-    const {LogOut} = useAuth();
+    const {logout} = useAuth();
 
     useEffect(()=>{
-        LogOut();
-    }, [LogOut]);
+        logout();
+    }, [logout]);
 
     return <Navigate to="/"/>
 }

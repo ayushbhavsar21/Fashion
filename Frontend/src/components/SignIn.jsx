@@ -10,7 +10,7 @@ function SignIn() {
 
     const navigate = useNavigate();
     
-    const {storetokenInLS} = useAuth();
+    const {storeTokenInCookie} = useAuth();
 
     const [user, setUser] = useState({
         email: "",
@@ -30,8 +30,6 @@ function SignIn() {
     const handleSubmit = async(e)=>{
         e.preventDefault();
 
-        console.log(user);
-
         try {
             const response = await fetch('http://localhost:8000/api/v1/users/login',{
             method: "POST",
@@ -46,7 +44,7 @@ function SignIn() {
 
             const res = await response.json();
 
-            storetokenInLS(res.data.refreshToken);
+            storeTokenInCookie(res.data.refreshToken);
 
             setUser({
                 email: "",
