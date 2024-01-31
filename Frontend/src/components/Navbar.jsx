@@ -66,7 +66,7 @@ function Navbar() {
             </a>
           </div>
           <div>
-            <a href="/Product" className='text-[19px] text-gray-900'>
+            <a href="/ShopNow" className='text-[19px] text-gray-900'>
               {t("Shop-Now")}
             </a>
           </div>
