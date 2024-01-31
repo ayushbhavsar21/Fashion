@@ -10,7 +10,7 @@ function ShopNow() {
    <div className='bg-primary'>
     <Navbar/>
  <div>
-<img src={shopnow} alt=""  className='h-[80vh] w-[99vw]'/>
+<img src={shopnow} alt=""  className='sm:h-[80vh] w-[99.9vw] h-[50vh]'/>
     </div>
 
       <Mens/>
