@@ -76,7 +76,7 @@ function Cart() {
           {/* Contact Info */}
           <div className="px-5 py-6 md:px-8">
             <div className="flow-root">
-              <div className="-my-6 divide-y divide-gray-200">
+              <div className="-my-6 divide-y divide-quaternary">
                 <div className="py-6">
                   <h2 className="text-base font-bold text-black">Contact Information</h2>
                   <p className="fontmedium mt-3 text-xs text-gray-700">Order Number: #9876567890</p>
