@@ -9,7 +9,6 @@ import React, { useState, useEffect } from 'react';
 
 import img from '../assets/Girl.png'
 import '../components/App.css'
-
 const Home = () => {
   const [loading, setLoading] = useState(true);
 
