@@ -52,9 +52,9 @@ function Navbar() {
 
   return (
     <>
-      <div className='h-[11vh] flex justify-between items-center bg-primary sm:p-8 p-3 font-playfair'>
+      <div className='h-[11vh] flex justify-between items-center bg-primary sm:p-8 pr-2 pl-0 font-playfair'>
         <div><a href="/">
-          <img className='sm:h-[12vh] h-[10vh]' src={fashion} alt="FASHION" />
+          <img className='sm:h-[12vh] h-[8vh]' src={fashion} alt="FASHION" />
         </a>
           {/* <h1 className='sm:text-[22px] text-[18px] text-imperialred font-bold'>FASHION</h1> */}
           
@@ -80,7 +80,7 @@ function Navbar() {
           <div className='flex gap-1'>
             <input
               type="text"
-              className={`sm:w-[33vw] w-[38vw] h-[30px] border-[2px] border-imperialred rounded-2xl ${
+              className={`sm:w-[33vw] w-[30vw] h-[30px] border-[2px] border-imperialred rounded-2xl ${
                 isSearchOpen ? 'block' : 'hidden'
               }`}
               placeholder=' Search...'
@@ -89,11 +89,7 @@ function Navbar() {
               <img src={search} alt="" className='h-[23px]' />
             </button>
           </div>
-          <div className='hidden lg:block'>
-            <a href="/SignIn">
-              <img src={login} alt="" className='h-[23px]' />
-            </a>
-          </div>
+          
           <div  className='hidden lg:block'>
             <a href="/Cart">
               <img src={bag} alt="" className='h-[23px]' />
@@ -106,14 +102,14 @@ function Navbar() {
           </div>
           {isLoggedIn ? (
             <a href="/Logout">
-              <button className="drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] px-4 py-3 w-[120px] bg-secondary text-white  rounded-md  mt-4" >
+              <button className="text-imperialred" >
                LogOut
               </button>
             </a>
             
           ):(
             <a href="/SignIn">
-              <button className="drop-shadow-[0_5px_5px_rgba(58,163,159,0.8)] px-4 py-3 w-[120px] bg-secondary text-white  rounded-md  mt-4" >
+              <button className="text-imperialred" >
                SignIn
             </button>
             </a>
@@ -131,14 +127,7 @@ function Navbar() {
       </div>
       {isDropdownOpen && (
         <div className='w-full h-[100vh] flex flex-col gap-6 pt-4 bg-primary'>
-          <div >
-            <a href="/SignIn" className='flex text-[18px] text-gray-900 pl-2 items-center gap-2'>
-              <p>Login / Sign Up</p>
-              <img src={login} alt="" className='h-[23px]' />
-            </a>
-            <hr className="absolute left-2 right-2 border-gray-400 lg:hidden my-2" />
-
-          </div>
+         
           <div>
             <a href="/" className='text-[18px] text-gray-900 pl-2'>
               Discover
