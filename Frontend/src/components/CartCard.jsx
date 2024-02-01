@@ -8,7 +8,7 @@ const CartCard = ({ product }) => {
       <div className="flex flex-1 items-stretch">
         <div className="flex-shrink-0">
           <img
-            className="h-20 w-20 rounded-lg border border-gray-200 object-contain"
+            className="h-20 w-20 rounded-lg border border-quaternary object-contain"
             src={product.imageSrc}
           />
         </div>
@@ -30,7 +30,7 @@ const CartCard = ({ product }) => {
           className="-m-2 inline-flex rounded p-2 text-gray-400 transition-all duration-200 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2"
         >
           <span className="sr-only">Remove</span>
-          <X className="h-5 w-5" />
+          <X className="h-5 w-5 text-quaternary" />
         </button>
       </div>
     </li>
