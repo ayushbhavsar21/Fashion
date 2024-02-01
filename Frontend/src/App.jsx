@@ -6,6 +6,7 @@ import './components/App.css'
 import SignIn from './components/SignIn';
 import Register from './components/Register';
 import LogOut from './components/LogOut';
+import Cart from './pages/Cart';
 
 const App = () => {
 
@@ -17,6 +18,7 @@ const App = () => {
             <Route exact path="/Register" element={<Register />} />
             <Route exact path="/ShopNow" element={<ShopNow />} />
             <Route exact path="/Logout" element={<LogOut />} />
+            <Route exact path="/Cart" element={<Cart/>} />
           </Routes>
       </Router>
    

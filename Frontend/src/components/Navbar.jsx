@@ -95,7 +95,7 @@ function Navbar() {
             </a>
           </div>
           <div  className='hidden lg:block'>
-            <a href="">
+            <a href="/Cart">
               <img src={bag} alt="" className='h-[23px]' />
             </a>
           </div>
@@ -146,7 +146,7 @@ function Navbar() {
             <hr className="absolute left-2 right-2 border-gray-400 lg:hidden my-2" />
           </div>
           <div>
-            <a href="/Product" className='text-[18px] text-gray-900 pl-2'>
+            <a href="/ShopNow" className='text-[18px] text-gray-900 pl-2'>
               Shop-Now
             </a>
             <hr className="absolute left-2 right-2 border-gray-400 lg:hidden my-2" />
@@ -161,7 +161,7 @@ function Navbar() {
           </div>
           
           <div>
-          <a href="" className='flex text-[18px] text-gray-900 pl-2 items-center gap-2'>
+          <a href="/Cart" className='flex text-[18px] text-gray-900 pl-2 items-center gap-2'>
               <p>Bag</p>
               <img src={bag} alt="" className='h-[23px]' />
             </a>
