@@ -46,18 +46,21 @@ function Cart() {
     return (
         <div className='bg-primary'>
             <Navbar/>
-            <div className="mx-auto my-4 max-w-4xl md:my-6 px-4">
-      <div className="overflow-hidden rounded-xl border border-gray-100 shadow">
+            <div className='mt-8 text-center '>
+    <h1 className='font-dancing sm:text-[36px] text-[20px] text-gray-900 '><span className='sm:text-[64px] text-[40px]'>Your </span>Cart</h1> 
+    </div>
+            <div className="mx-auto my-4 max-w-4xl md:my-6 px-4 pb-28">
+      <div className="overflow-hidden rounded-xl border border-quaternary shadow bg-tertiary">
         <div className="grid grid-cols-1 md:grid-cols-2">
           {/* Product List */}
-          <div className="px-5 py-6 md:border-r md:border-r-gray-200 md:px-8">
+          <div className="px-5 py-6 md:border-r border-quaternary md:px-8">
             <div className="flow-root">
-              <ul className="-my-7 divide-y divide-gray-200">
+              <ul className="-my-7 divide-y divide-quaternary">
                 {products.map((product) => (
                  <CartCard key={product.id} product={product} />
                 ))}
               </ul>
-              <hr className="mt-6 border-gray-200" />
+              <hr className="mt-6 border-quaternary" />
               <ul className="mt-6 space-y-3">
                 <li className="flex items-center justify-between">
                   <p className="text-sm font-medium">Sub total</p>
@@ -80,7 +83,7 @@ function Cart() {
                   <p className="text-xs font-medium text-gray-700">Date: March 03, 2023</p>
                   <button
                     type="button"
-                    className="mt-4 rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                    className="mt-4 rounded-md bg-secondary px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-secondary/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
                   >
                     Proceed to Pay
                   </button>
