@@ -46,7 +46,7 @@ function Cart() {
     return (
         <div className='bg-primary'>
             <Navbar/>
-            <div className="mx-auto my-4 max-w-4xl md:my-6">
+            <div className="mx-auto my-4 max-w-4xl md:my-6 px-4">
       <div className="overflow-hidden rounded-xl border border-gray-100 shadow">
         <div className="grid grid-cols-1 md:grid-cols-2">
           {/* Product List */}
