@@ -10,7 +10,7 @@ function SignIn() {
 
     const navigate = useNavigate();
     
-    const {storeTokenInCookie} = useAuth();
+    const {storeTokenInLS} = useAuth();
 
     const [user, setUser] = useState({
         email: "",
@@ -43,8 +43,9 @@ function SignIn() {
         if(response.ok){
 
             const res = await response.json();
+            console.log(res);
 
-            storeTokenInCookie(res.data.refreshToken);
+            storeTokenInLS(res.data.accessToken);
 
             setUser({
                 email: "",

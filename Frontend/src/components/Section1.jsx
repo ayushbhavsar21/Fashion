@@ -57,7 +57,7 @@ function Section1() {
               {t("Explore")}
             </button>
 
-            {user? user.userName : "HI" }
+            {user? user.role : "HI" }
             
           </div>
         </div>
