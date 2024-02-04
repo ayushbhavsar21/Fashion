@@ -1,19 +1,20 @@
 import { Router } from "express";
 import { registerUser, logInUser, logOutUser, currentUser } from "../controllers/user.controllers.js";
 import { verifyJWT } from "../middlewares/auth.middleware.js";
+import router from "./product.routes.js";
 
-const userRouter = Router();
+const router = Router();
 
 //Register
-userRouter.route("/register").post(registerUser)
+router.route("/register").post(registerUser)
 
 //Login
-userRouter.route("/login").post(logInUser)
+router.route("/login").post(logInUser)
 
 //Logout
-userRouter.route("/logout").post(verifyJWT, logOutUser)
+router.route("/logout").post(verifyJWT, logOutUser)
 
 //CurrentUser
-userRouter.route("/user").get(verifyJWT, currentUser)
+router.route("/user").get(verifyJWT, currentUser)
 
-export default userRouter;
+export default router;
