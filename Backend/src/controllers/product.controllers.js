@@ -2,16 +2,25 @@ import { asyncHandler } from "../utils/asyncHandler.js";
 import { Product } from "../models/product.model.js";
 import { ApiResponse } from "../utils/ApiResonse.js";
 import { ApiError } from "../utils/ApiError.js";
+import {uploadFileOnCloudinary} from '../utils/cloudinary.js';
 
 const createProduct = asyncHandler(async(req,res)=>{
     
-    const {name, description, productImage, price, stock, category, address, status} = req.body;
+    const {name, description, price, stock, category, address, status} = req.body;
     const {user} = req;
+
+    const productImgLocalPath = req.files?.productImage[0]?.path;
+    
+    const productImage = await uploadFileOnCloudinary(productImgLocalPath);
+
+    if(!productImage){
+        throw new ApiError(400, "Avatar file is required!!");
+    }
 
     const product = await Product.create({
         name, 
         description,
-        productImage,
+        productImage: productImage.url,
         price,
         stock,
         category,

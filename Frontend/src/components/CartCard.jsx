@@ -9,7 +9,7 @@ const CartCard = ({ product }) => {
         <div className="flex-shrink-0">
           <img
             className="h-20 w-20 rounded-lg border border-quaternary object-contain"
-            src={product.imageSrc}
+            src={product.productImage}
           />
         </div>
 

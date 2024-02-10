@@ -6,13 +6,20 @@ import
     getProductById,
     updateProductById,
     deleteProductById
- } from "../controllers/product.controllers.js";
+} from "../controllers/product.controllers.js";
+
+import {upload} from '../middlewares/multer.middleware.js';
 
 const router = Router();
 
 router.use(verifyJWT);
 
-router.route('/add').post(createProduct); 
+router.route('/add').post(
+    upload.fields({
+        name: "productImage",
+        maxCount: 1
+    })
+    ,createProduct); 
 router.route('/getProducts').get(getProducts);     
 router.route('/getProduct/:id').get(getProductById); 
 router.route('/updateProduct/:id').put(updateProductById); 
