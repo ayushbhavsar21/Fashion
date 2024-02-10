@@ -1,7 +1,7 @@
-import { asyncHandler } from "../utils/asyncHandler";
-import { Order } from '../models/order.model';
-import { ApiResponse } from "../utils/ApiResonse";
-import { ApiError } from "../utils/ApiError";
+import { asyncHandler } from "../utils/asyncHandler.js";
+import { Order } from '../models/order.model.js';
+import { ApiResponse } from "../utils/ApiResonse.js";
+import { ApiError } from "../utils/ApiError.js";
 
 const createOrder = asyncHandler(async(req,res)=>{
     const order = new Order(req.body);

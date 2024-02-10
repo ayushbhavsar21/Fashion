@@ -11,7 +11,7 @@ const orderItemSchema = new Schema({
   }
 })
 
-const orderSchema = new mongoose.Schema({
+const orderSchema = new Schema({
   orderPrice:{
     type: Number,
     required: true

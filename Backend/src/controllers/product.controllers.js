@@ -1,7 +1,7 @@
-import { asyncHandler } from "../utils/asyncHandler";
-import { Product } from "../models/product.model";
-import { ApiResponse } from "../utils/ApiResonse";
-import { ApiError } from "../utils/ApiError";
+import { asyncHandler } from "../utils/asyncHandler.js";
+import { Product } from "../models/product.model.js";
+import { ApiResponse } from "../utils/ApiResonse.js";
+import { ApiError } from "../utils/ApiError.js";
 
 const createProduct = asyncHandler(async(req,res)=>{
     
