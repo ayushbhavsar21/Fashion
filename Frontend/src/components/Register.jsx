@@ -4,6 +4,7 @@ import {useNavigate } from 'react-router-dom';
 import Clipart from "../assets/Buyerregister.svg"
 import line from "../assets/line.png"
 import Google from "../assets/Google.png"
+import { toast } from 'react-toastify';
 
 function Register() {
 
@@ -30,8 +31,6 @@ function Register() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        console.log(user);
-
         try {
             const response = await fetch('http://localhost:8000/api/v1/users/register', {
 
@@ -46,17 +45,23 @@ function Register() {
 
                 const res = await response.json();
 
-                console.log(res);
-
                 setUser({ userName: "", email: "", password: "" })
+
+                toast.success(res.message);
 
                 navigate("/");
             }
-
-            console.log(response);
+            else{
+                const erroMessage = await response.json();
+                toast.error(erroMessage.message);
+            }
 
         } catch (error) {
-
+            if (error instanceof ApiError) {
+                alert(`Error: ${error.message}`);
+            } else {
+                console.error('Unexpected error:', error);
+            }
         }
     };
 

@@ -1,6 +1,27 @@
 import React from 'react'
+import { useState, useEffect } from 'react'
 import ProductCard from '../components/ProductCard'
+
 function Mens() {
+
+  const [products, setProducts] = useState([]);
+
+  const getProducts = async(e)=>{
+    const response = await fetch('http://localhost:8000/api/v1/products/getProducts',{
+      method: "GET",
+      headers:{
+        "Content-Type": "application/json",
+      }
+    })
+
+    const res = await response.json();
+    console.log(res);
+  }
+
+  useEffect(()=>{
+    getProducts();
+  },[])
+
     return (
     <>
     <div className='mt-8'>

@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
+import { ApiError } from "../../../Backend/src/utils/ApiError";
 
 export const AuthContext = createContext({});
 

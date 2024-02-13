@@ -5,6 +5,7 @@ import SignInclipart from "../assets/SignIn-Clipart.svg"
 import {useNavigate} from 'react-router-dom';
 import Navbar from "./Navbar";
 import { useAuth } from "../contexts/AuthContext";
+import { toast } from 'react-toastify';
 
 function SignIn() {
 
@@ -41,21 +42,24 @@ function SignIn() {
         })
 
         if(response.ok){
-
             const res = await response.json();
-            console.log(res);
-
             storeTokenInLS(res.data.accessToken);
-
             setUser({
                 email: "",
                 password: ""
             })
+
+            toast.success(res.message);
+
             navigate("/");
+        }
+        else{
+            const errorResponse = await response.json();
+            toast.error(errorResponse.message);
         }
 
         } catch (error) {
-
+          console.log(error);
         }
     }
 

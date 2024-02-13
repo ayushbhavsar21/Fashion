@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ProductCard() {
+function ProductCard({props}) {
   return (
     <div  className="rounded-md border border-quaternary font-playfair bg-tertiary">
               <img
@@ -9,19 +9,13 @@ function ProductCard() {
                 className="aspect-[16/9] w-full rounded-md md:aspect-auto md:h-[300px] lg:h-[200px]"
               />
               <div className="p-4">
-                <h1 className="inline-flex items-center text-lg font-semibold">Nike Airmax v2</h1>
+                <h1 className="inline-flex items-center text-lg font-semibold">{props.name}</h1>
                 <p className="mt-3 text-sm text-gray-600">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, debitis?
+                  {props.description}
                 </p>
                 <div className="mt-4">
                   <span className="mb-2 mr-2 inline-block rounded-full bg-primary px-3 py-1 text-[10px] font-semibold text-gray-900">
-                    #Sneakers
-                  </span>
-                  <span className="mb-2 mr-2 inline-block rounded-full bg-primary px-3 py-1 text-[10px] font-semibold text-gray-900">
-                    #Nike
-                  </span>
-                  <span className="mb-2 mr-2 inline-block rounded-full bg-primary px-3 py-1 text-[10px] font-semibold text-gray-900">
-                    #Airmax
+                    {props.category}
                   </span>
                 </div>
                 

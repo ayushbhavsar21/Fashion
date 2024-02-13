@@ -7,6 +7,7 @@ import SignIn from './components/SignIn';
 import Register from './components/Register';
 import LogOut from './components/LogOut';
 import Cart from './pages/Cart';
+import Product from './components/Product'
 
 const App = () => {
 
@@ -19,6 +20,7 @@ const App = () => {
             <Route exact path="/ShopNow" element={<ShopNow />} />
             <Route exact path="/Logout" element={<LogOut />} />
             <Route exact path="/Cart" element={<Cart/>} />
+            <Route exact path="/product" element={<Product/>} />
           </Routes>
       </Router>
    
