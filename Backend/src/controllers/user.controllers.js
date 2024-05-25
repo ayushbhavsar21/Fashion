@@ -26,9 +26,9 @@ const generateAccessAndRefreshToken = async(userId)=>{
 
 const registerUser = asyncHandler(async (req,res)=>{
  
-    const {email, userName, password, role} = req.body;
+    const {email, userName, password} = req.body;
 
-    if( !email || !userName || !password || !role ){
+    if( !email || !userName || !password ){
         return res
         .status(400)
         .json(
@@ -68,7 +68,6 @@ const registerUser = asyncHandler(async (req,res)=>{
         email,
         password,
         userName,
-        role
     })
 
     const createdUser = await User.findById(user._id).select(
@@ -190,8 +189,11 @@ const currentUser = (async(req,res)=>{
     try {
         const userData = req.user;
 
-        return res.status(200)
-        .json(new ApiResponse(200, userData, "Current User Data!!"));
+        return res
+        .status(200)
+        .json(
+            new ApiResponse(200, userData, "Current User Data!!")
+        );
 
     } catch (error) {
         console.log(error);

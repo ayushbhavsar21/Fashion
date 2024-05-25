@@ -3,13 +3,10 @@ import section11 from '../assets/section11.svg';
 import section12 from '../assets/section12.svg';
 import section13 from '../assets/section13.svg';
 import { useTranslation } from 'react-i18next'
-import { useAuth } from '../contexts/AuthContext';
 
 function Section1() {
 
   const { t } = useTranslation()
-
-  const {user} = useAuth();
 
   const sections = [
     { image: section11, text: ' High Fashion' },
@@ -56,8 +53,6 @@ function Section1() {
             <button className='mt-[3vh] px-4 py-1 bg-secondary text-white  rounded-md'>
               {t("Explore")}
             </button>
-
-            {user? user.role : "HI" }
             
           </div>
         </div>

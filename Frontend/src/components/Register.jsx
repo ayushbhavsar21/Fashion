@@ -12,7 +12,6 @@ function Register() {
         userName: "",
         email: "",
         password: "",
-        role: ""
     })
 
     const handleInput = (e) => {
@@ -90,11 +89,6 @@ function Register() {
                                 <input className="rounded-lg h-[40px] w-[100%]" type="text" name="password" value={user.password} onChange={handleInput} />
                             </div>
                             <div>
-                            <div className="pl-1 pb-2">Role:</div>
-                            <select id="cars" name="role" value={user.role} onChange={handleInput}>
-                            <option value="buyer">Buyer</option>
-                            <option value="seller">Seller</option>
-                            </select>
                                 
                             </div>
                             <div className="self-center lg:pl-[40%] pl-[35%] pt-4">

@@ -15,11 +15,14 @@ const router = Router();
 router.use(verifyJWT);
 
 router.route('/add').post(
-    upload.fields({
-        name: "productImage",
-        maxCount: 1
-    })
+    upload.fields([
+        {
+            name: "productImage",
+            maxCount: 1
+        }
+    ])
     ,createProduct); 
+
 router.route('/getProducts').get(getProducts);     
 router.route('/getProduct/:id').get(getProductById); 
 router.route('/updateProduct/:id').put(updateProductById); 

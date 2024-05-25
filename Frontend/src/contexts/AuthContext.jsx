@@ -44,12 +44,12 @@ export const AuthProvider = ({ children }) => {
         }
     };
 
-    useEffect(() => {
+    /*useEffect(() => {
         userAuthentication();
-    }, [token]);
+    }, [token]);*/
 
     return (
-        <AuthContext.Provider value={{ storeTokenInLS, isLoggedIn, logout, user, loading }}>
+        <AuthContext.Provider value={{ storeTokenInLS, isLoggedIn, logout, user, loading, token}}>
             {children}
         </AuthContext.Provider>
     )

@@ -65,16 +65,36 @@ function Navbar() {
               {t("Discover")}
             </a>
           </div>
-          <div>
+          {isLoggedIn ? (
+            <>
+            <div>
             <a href="/ShopNow" className='text-[19px] text-gray-900'>
               {t("Shop-Now")}
             </a>
           </div>
           <div>
-            <a href="" className='text-[19px] text-gray-900'>
+            <a href="/" className='text-[19px] text-gray-900'>
               {t("Orders")}
             </a>
           </div>
+            </>
+            
+          ):(
+            <>
+            <div>
+            <a href="/SignIn" className='text-[19px] text-gray-900'>
+              {t("Shop-Now")}
+            </a>
+          </div>
+          <div>
+            <a href="/SignIn" className='text-[19px] text-gray-900'>
+              {t("Orders")}
+            </a>
+          </div>
+            </>
+          )
+
+          }
         </div>
         <div className='flex sm:gap-4 gap-2 items-center h-[12vh]'>
           <div className='flex gap-1'>
@@ -90,11 +110,23 @@ function Navbar() {
             </button>
           </div>
           
-          <div  className='hidden lg:block'>
+          {isLoggedIn ? (
+            <div  className='hidden lg:block'>
             <a href="/Cart">
               <img src={bag} alt="" className='h-[23px]' />
             </a>
           </div>
+            
+          ):(
+            <div  className='hidden lg:block'>
+            <a href="/SignIn">
+              <img src={bag} alt="" className='h-[23px]' />
+            </a>
+          </div>
+          )
+
+          }
+          
           <div>
             
                 <LangSelector setLang={setLang} lang={currentLang} />

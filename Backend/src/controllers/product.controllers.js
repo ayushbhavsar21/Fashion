@@ -9,12 +9,28 @@ const createProduct = asyncHandler(async(req,res)=>{
     const {name, description, price, stock, category, address, status} = req.body;
     const {user} = req;
 
+    if (!name || !description || !price || !stock || !category || !address || !status) {
+        return res.status(400).json(new ApiError(400, "All fields are required!!"));
+    }
+
     const productImgLocalPath = req.files?.productImage[0]?.path;
     
+    if(!productImgLocalPath){
+        return res
+        .status(400)
+        .json(
+            new ApiError(400, "productImage file is required!!")
+        );
+    }
+
     const productImage = await uploadFileOnCloudinary(productImgLocalPath);
 
     if(!productImage){
-        throw new ApiError(400, "Avatar file is required!!");
+        return res
+        .status(500)
+        .json(
+            new ApiError(500, "Something went wrong while uploading Product Image")
+        );
     }
 
     const product = await Product.create({
@@ -28,7 +44,20 @@ const createProduct = asyncHandler(async(req,res)=>{
         status,
         owner: user._id
     })
-    res.status(200).json(new ApiResponse(201, product, "product is added!!"))
+
+    if(!product){
+        return res
+        .status(500)
+        .json(
+            new ApiError(500,"Something went wrong while creating the Product")
+        )
+    }
+
+    return res
+    .status(200)
+    .json(
+        new ApiResponse(201, product, "product is added!!")
+    )
 })
 
 const getProducts = asyncHandler(async(req,res)=>{
@@ -38,7 +67,9 @@ const getProducts = asyncHandler(async(req,res)=>{
         throw new ApiError(404, 'Products not found!!')
     }
 
-    req.status(200).json(new ApiResponse(200, products, 'Products found')) 
+    return res
+    .status(200)
+    .json(new ApiResponse(200, products, 'Products found')) 
 })
 
 const getProductById = asyncHandler(async(req,res)=>{
@@ -48,7 +79,9 @@ const getProductById = asyncHandler(async(req,res)=>{
         throw new ApiError(404, 'Product not found!!')
     }
 
-    req.status(200).json(new ApiResponse(200, product, 'Product found')) 
+    return res
+    .status(200)
+    .json(new ApiResponse(200, product, 'Product found')) 
 })
 
 const updateProductById = asyncHandler(async(req,res)=>{
@@ -57,7 +90,10 @@ const updateProductById = asyncHandler(async(req,res)=>{
     if (!product) {
         throw new ApiError(404, 'Product not found');
     }
-    res.status(200).json(new ApiResponse( 200, product, "Product updated successfully!!"));
+
+    return res
+    .status(200)
+    .json(new ApiResponse( 200, product, "Product updated successfully!!"));
 })
 
 const deleteProductById = asyncHandler(async(req,res)=>{
@@ -66,7 +102,10 @@ const deleteProductById = asyncHandler(async(req,res)=>{
     if (!product) {
         throw new ApiError(404, 'Product not found');
     }
-    res.status(200).json(new ApiResponse(200, product, 'Product deleted successfully!!'));
+
+    return res
+    .status(200)
+    .json(new ApiResponse(200, product, 'Product deleted successfully!!'));
 })
 
 

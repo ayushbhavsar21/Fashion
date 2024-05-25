@@ -4,7 +4,7 @@ function ProductCard({props}) {
   return (
     <div  className="rounded-md border border-quaternary font-playfair bg-tertiary">
               <img
-                src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src={props.productImage}
                 alt="Laptop"
                 className="aspect-[16/9] w-full rounded-md md:aspect-auto md:h-[300px] lg:h-[200px]"
               />
@@ -15,12 +15,12 @@ function ProductCard({props}) {
                 </p>
                 <div className="mt-4">
                   <span className="mb-2 mr-2 inline-block rounded-full bg-primary px-3 py-1 text-[10px] font-semibold text-gray-900">
-                    {props.category}
+                    
                   </span>
                 </div>
                 
                 <div className="mt-5 flex items-center space-x-2">
-                  <span className="block text-sm font-semibold">Size : </span>
+                  <span className="block text-sm font-semibold">Size : {props.size}</span>
                   <span className="block cursor-pointer rounded-md border border-gray-300 p-1 px-2 text-xs font-medium">
                     8 UK
                   </span>
