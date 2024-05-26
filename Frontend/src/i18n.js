@@ -10,7 +10,7 @@ i18next
     .init({
         fallbackLng: 'en',
         debug: true,
-        whitelist: ['en', 'hi', 'ta', 'te', 'od'], // add language codes that you want. 
+        whitelist: ['en', 'hi', 'bn', 'mr', 'pa'], // add language codes that you want. 
         detection: {
             order: ['navigator', 'htmlTag', 'path', 'subdomain'],
             checkWhiteList: true,
