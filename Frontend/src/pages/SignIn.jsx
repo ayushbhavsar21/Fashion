@@ -3,7 +3,6 @@ import line from "../assets/line.png"
 import Google from "../assets/googleLogo.svg"
 import SignInclipart from "../assets/SignIn-Clipart.svg"
 import {useNavigate} from 'react-router-dom';
-import Navbar from "./Navbar";
 import { useAuth } from "../contexts/AuthContext";
 import { toast } from 'react-toastify';
 
@@ -65,7 +64,6 @@ function SignIn() {
 
     return (
         < >
-           <Navbar/>
             <div className="bg-primary lg:h-[88.9vh] h-auto w-[100%] flex justify-around font-playfair">
             <div className="lg:flex justify-center items w-[50vw] hidden">
                 <img className="drop-shadow-2xl w-[80%]  " src={SignInclipart} alt="" />

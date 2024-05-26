@@ -1,14 +1,7 @@
 import React from 'react';
-import { X } from 'lucide-react';
-import { useCart } from '../contexts/CartContext';
+import { X } from 'lucide-react'
 
-const CartCard = ({ product }) => {
-  const { removeFromCart } = useCart();
-
-  const handleRemove = () => {
-    removeFromCart(product.id);
-  };
-
+const OrderCard = ({ product }) => {
   return (
     <li className="flex items-stretch justify-between space-x-5 py-7">
       <div className="flex flex-1 items-stretch">
@@ -16,7 +9,6 @@ const CartCard = ({ product }) => {
           <img
             className="h-20 w-20 rounded-lg border border-quaternary object-contain"
             src={product.productImage}
-            alt={product.name}
           />
         </div>
 
@@ -27,7 +19,7 @@ const CartCard = ({ product }) => {
               Blue
             </p>
           </div>
-          <p className="mt-4 text-sm font-medium text-gray-500">x {product.quantity}</p>
+          <p className="mt-4 text-sm font-medium text-gray-500">x 1</p>
         </div>
       </div>
       <div className="ml-auto flex flex-col items-end justify-between">
@@ -35,7 +27,6 @@ const CartCard = ({ product }) => {
         <button
           type="button"
           className="-m-2 inline-flex rounded p-2 text-gray-400 transition-all duration-200 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2"
-          onClick={handleRemove}
         >
           <span className="sr-only">Remove</span>
           <X className="h-5 w-5 text-quaternary" />
@@ -45,4 +36,4 @@ const CartCard = ({ product }) => {
   );
 };
 
-export default CartCard;
+export default OrderCard;

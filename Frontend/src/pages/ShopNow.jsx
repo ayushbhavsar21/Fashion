@@ -8,7 +8,6 @@ import Navbar from '../components/Navbar'
 function ShopNow() {
   return (
    <div className='bg-primary'>
-    <Navbar/>
  <div>
 <img src={shopnow} alt=""  className='sm:h-[80vh] w-[99.9vw] h-[50vh]'/>
     </div>

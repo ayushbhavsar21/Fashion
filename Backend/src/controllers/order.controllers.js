@@ -26,6 +26,7 @@ const createOrder = asyncHandler(async (req, res) => {
       ...item,
       name: product.name,
       price: product.price,
+      productImage: product.productImage,
       total: itemPrice
     };
   }));

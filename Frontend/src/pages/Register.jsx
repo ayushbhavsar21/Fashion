@@ -1,4 +1,4 @@
-import Navbar from "./Navbar";
+
 import { useState } from "react";
 import {useNavigate } from 'react-router-dom';
 import Clipart from "../assets/Buyerregister.svg"
@@ -66,7 +66,6 @@ function Register() {
 
     return (
         < >
-            <Navbar />
             <div className="bg-primary lg:h-[88.9vh] h-auto  w-full flex font-playfair">
                 <div className="lg:flex justify-center items w-[50vw] hidden">
                 <img className="drop-shadow-2xl w-[80%]  " src={Clipart} alt="" />

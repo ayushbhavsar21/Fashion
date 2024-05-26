@@ -1,7 +1,8 @@
 import React from 'react'
 import Fashion4 from '../assets/Fashion4.svg'
 import { useTranslation } from 'react-i18next'
-export function FooterFour() {
+
+export default function Footer() {
 
  const {t}=useTranslation()
 

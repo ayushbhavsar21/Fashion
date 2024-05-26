@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios';
 import { useState, useEffect } from 'react'
 import { useAuth } from '../contexts/AuthContext';
 import ProductCard from '../components/ProductCard'
@@ -9,14 +10,13 @@ function Mens() {
   const [products, setProducts] = useState([]);
 
   const getProducts = async(e)=>{
-    const response = await fetch('/api/v1/products/getProducts',{
-      method: "GET",
+    const response = await axios.get('/api/v1/products/getProducts',{
       headers: {
         'Authorization': `${token}`
       }
     })
 
-    const res = await response.json();
+    const res = response.data;
 
     console.log(res.data);
     setProducts(res.data);
