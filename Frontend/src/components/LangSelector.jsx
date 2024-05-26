@@ -51,9 +51,9 @@ function LangSelector(props) {
     const languagesList = [
       { code: 'en', name: 'English' },
       { code: 'hi', name: 'Hindi' },
-      { code: 'ta', name: 'Tamil' },
-      { code: 'te', name: 'Telugu' },
-      { code: 'od', name: 'Odia' },
+      { code: 'bn', name: 'Bengali' },
+      { code: 'mr', name: 'Marathi' },
+      { code: 'pa', name: 'Punjabi' },
     ];
 
     return languagesList.map((lang) => (

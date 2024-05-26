@@ -135,14 +135,14 @@ function Navbar() {
           {isLoggedIn ? (
             <a href="/Logout">
               <button className="text-imperialred" >
-               LogOut
+               {t("LogOut")}
               </button>
             </a>
             
           ):(
             <a href="/SignIn">
               <button className="text-imperialred" >
-               SignIn
+               {t("SignIn")}
             </button>
             </a>
           )
@@ -162,20 +162,20 @@ function Navbar() {
          
           <div>
             <a href="/" className='text-[18px] text-gray-900 pl-2'>
-              Discover
+              {t("Discover")}
             </a>
             <hr className="absolute left-2 right-2 border-gray-400 lg:hidden my-2" />
           </div>
           <div>
             <a href="/ShopNow" className='text-[18px] text-gray-900 pl-2'>
-              Shop-Now
+              {t("Shop-Now")}
             </a>
             <hr className="absolute left-2 right-2 border-gray-400 lg:hidden my-2" />
 
           </div>
           <div>
             <a href="" className='text-[18px] text-gray-900 pl-2'>
-              Orders
+              {t("Orders")}
             </a>
             <hr className="absolute left-2 right-2 border-gray-400 lg:hidden my-2" />
 
@@ -183,7 +183,7 @@ function Navbar() {
           
           <div>
           <a href="/Cart" className='flex text-[18px] text-gray-900 pl-2 items-center gap-2'>
-              <p>Bag</p>
+              <p>{t("Bag")}</p>
               <img src={bag} alt="" className='h-[23px]' />
             </a>
             <hr className="absolute left-2 right-2 border-gray-400 lg:hidden my-2" />
