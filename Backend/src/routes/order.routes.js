@@ -5,7 +5,7 @@ import
     createOrder,
     deleteOrderById, 
     getOrderById, 
-    getOrders, 
+    getOrderHistory, 
     updateOrderById 
     
 } from "../controllers/order.controllers.js";
@@ -15,7 +15,7 @@ const router = Router();
 router.use(verifyJWT);
 
 router.route('/add').post(createOrder); 
-router.route('/getOrders').get(getOrders);     
+router.route('/getOrders').get(getOrderHistory);     
 router.route('/getOrder/:id').get(getOrderById); 
 router.route('/updateOrder/:id').put(updateOrderById); 
 router.route('/remove/:id').delete(deleteOrderById);

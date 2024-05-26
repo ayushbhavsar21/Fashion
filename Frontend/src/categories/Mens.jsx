@@ -9,7 +9,7 @@ function Mens() {
   const [products, setProducts] = useState([]);
 
   const getProducts = async(e)=>{
-    const response = await fetch('http://localhost:8000/api/v1/products/getProducts',{
+    const response = await fetch('/api/v1/products/getProducts',{
       method: "GET",
       headers: {
         'Authorization': `${token}`
