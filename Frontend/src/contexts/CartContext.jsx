@@ -20,8 +20,16 @@ export function CartProvider({ children }) {
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
   }, [cartItems]);
 
+  const removeFromCart = (id) => {
+
+    const updatedCartItems = cartItems.filter(item => item.id !== id);
+    setCartItems(updatedCartItems);
+
+    localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+  };
+
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, setCartItems }}>
+    <CartContext.Provider value={{ cartItems, addToCart, setCartItems, removeFromCart }}>
       {children}
     </CartContext.Provider>
   );

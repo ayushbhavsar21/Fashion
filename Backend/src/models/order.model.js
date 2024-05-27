@@ -33,6 +33,15 @@ const orderSchema = new Schema({
   },
   orderItems:{
     type:[orderItemSchema]
+  },
+  status: {
+    type: String,
+    enum: ['PENDING', 'CANCELLED', 'DELIVERED'],
+    default: 'PENDING',
+  },
+  date: {
+    type: String,
+    required: true
   }
 },{timestamps: true})
 

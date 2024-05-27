@@ -31,10 +31,17 @@ const createOrder = asyncHandler(async (req, res) => {
     };
   }));
 
+  // Date
+    const today = new Date();
+    const options = { day: 'numeric', month: 'long', year: 'numeric' };
+    const formattedDate = today.toLocaleDateString('en-US', options);
+
   const order = new Order({
     customer: user._id,
     orderItems: orderItemsWithDetails,
-    orderPrice: totalOrderPrice
+    orderPrice: totalOrderPrice,
+    status: 'PENDING',
+    date: formattedDate
   });
 
   const createdOrder = await order.save();

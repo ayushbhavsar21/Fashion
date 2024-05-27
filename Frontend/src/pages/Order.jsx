@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import CartCard from '../components/CartCard'
 import { useAuth } from '../contexts/AuthContext';
+import OrderCard from '../components/OrderCard';
 
 const Order = () => {
 
@@ -31,9 +32,9 @@ const Order = () => {
     <div className="bg-white w-full min-h-[80vh] flex flex-col justify-center items-center">
               <ul className="-my-7 divide-y divide-quaternary">
               {orders.map(item=>(
-        <CartCard
+        <OrderCard
         key={item.id}
-        product={item}
+        props={item}
         />
     ))}
               </ul>
