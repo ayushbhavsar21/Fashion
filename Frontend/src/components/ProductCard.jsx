@@ -36,7 +36,7 @@ function ProductCard({ props }) {
         </p>
 
         <div className="mt-3 flex items-center space-x-2">
-              <span className="block text-sm font-semibold">Price : ${props.price}</span>
+              <span className="block text-sm font-semibold">Price : ₹{props.price}</span>
               
         </div>
         <div className="mt-3 flex items-center space-x-2">
