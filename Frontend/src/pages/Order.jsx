@@ -29,15 +29,15 @@ const Order = () => {
 
   return (
     <>
-    <div className="bg-white w-full min-h-[80vh] flex flex-col justify-center items-center">
-              <ul className="-my-7 divide-y divide-quaternary">
+    <div className="bg-white w-full min-h-[80vh] flex flex-wrap gap-8 justify-evenly">
+              
               {orders.map(item=>(
         <OrderCard
         key={item.id}
         props={item}
         />
     ))}
-              </ul>
+              
     </div>
     </>
   )
