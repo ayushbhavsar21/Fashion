@@ -1,38 +1,30 @@
 import React from 'react';
 import { X } from 'lucide-react'
 
-const OrderCard = ({ product }) => {
+const OrderCard = () => {
   return (
-    <li className="flex items-stretch justify-between space-x-5 py-7">
-      <div className="flex flex-1 items-stretch">
-        <div className="flex-shrink-0">
-          <img
-            className="h-20 w-20 rounded-lg border border-quaternary object-contain"
-            src={product.productImage}
-          />
+    <div className="w-[320px] border-r bg-tertiary md:max-w-xs">
+    <div className="p-8">
+      <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-1">
+        <div className="mb-4">
+          <div className="text-sm font-semibold">Order ID</div>
+          <div className="text-sm font-medium text-gray-700">#74557994327</div>
         </div>
-
-        <div className="ml-5 flex flex-col justify-between">
-          <div className="flex-1">
-            <p className="text-sm font-bold text-gray-900">{product.name}</p>
-            <p className="mt-1.5 text-sm font-medium text-gray-600">
-              Blue
-            </p>
-          </div>
-          <p className="mt-4 text-sm font-medium text-gray-500">x 1</p>
+        <div className="mb-4">
+          <div className="text-sm font-semibold">Date</div>
+          <div className="text-sm font-medium text-gray-700">4 March, 2023</div>
+        </div>
+        <div className="mb-4">
+          <div className="text-sm font-semibold">Total Amount</div>
+          <div className="text-sm font-medium text-gray-700">₹84,499</div>
+        </div>
+        <div className="mb-4">
+          <div className="text-sm font-semibold">Order Status</div>
+          <div className="text-sm font-medium text-gray-700">Confirmed</div>
         </div>
       </div>
-      <div className="ml-auto flex flex-col items-end justify-between">
-        <p className="text-right text-sm font-bold text-gray-900">{product.price}</p>
-        <button
-          type="button"
-          className="-m-2 inline-flex rounded p-2 text-gray-400 transition-all duration-200 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2"
-        >
-          <span className="sr-only">Remove</span>
-          <X className="h-5 w-5 text-quaternary" />
-        </button>
-      </div>
-    </li>
+    </div>
+  </div>
   );
 };
 
