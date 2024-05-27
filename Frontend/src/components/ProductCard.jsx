@@ -34,26 +34,16 @@ function ProductCard({ props }) {
         <p className="mt-3 text-sm text-gray-600">
           {props.description}
         </p>
-        <div className="mt-4">
-          <span className="mb-2 mr-2 inline-block rounded-full bg-primary px-3 py-1 text-[10px] font-semibold text-gray-900">
-            {/* Additional tag or information */}
-          </span>
-        </div>
 
-        <div className="mt-5 flex items-center space-x-2">
-          <span className="block text-sm font-semibold">Size : {props.size}</span>
-          <span className="block cursor-pointer rounded-md border border-gray-300 p-1 px-2 text-xs font-medium">
-            8 UK
-          </span>
-          <span className="block cursor-pointer rounded-md border border-gray-300 p-1 px-2 text-xs font-medium">
-            9 UK
-          </span>
-          <span className="block cursor-pointer rounded-md border border-gray-300 p-1 px-2 text-xs font-medium">
-            10 UK
-          </span>
+        <div className="mt-3 flex items-center space-x-2">
+              <span className="block text-sm font-semibold">Price : ${props.price}</span>
+              
         </div>
-
-        <div className="mt-5 flex items-center space-x-2">
+        <div className="mt-3 flex items-center space-x-2">
+              <span className="block text-sm font-semibold">Category : {props.category}</span>
+              
+        </div>
+        <div className="mt-2 flex items-center space-x-2">
           <label className="block text-sm font-semibold">Quantity: </label>
           <input
             type="number"
