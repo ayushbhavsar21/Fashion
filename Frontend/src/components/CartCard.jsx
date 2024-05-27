@@ -24,7 +24,7 @@ const CartCard = ({ product }) => {
           <div className="flex-1">
             <p className="text-sm font-bold text-gray-900">{product.name}</p>
             <p className="mt-1.5 text-sm font-medium text-gray-600">
-              Blue
+             Proceed to buy.
             </p>
           </div>
           <p className="mt-4 text-sm font-medium text-gray-500">x {product.quantity}</p>

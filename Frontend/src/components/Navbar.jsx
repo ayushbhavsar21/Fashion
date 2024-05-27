@@ -52,7 +52,7 @@ function Navbar() {
 
   return (
     <>
-      <div className='h-[11vh] flex justify-between items-center bg-primary sm:p-8 pr-2 pl-0 font-playfair'>
+      <div className='h-[11vh] flex justify-between items-center bg-primary sm:p-8 pr-2 pl-0 font-playfair '>
         <div><a href="/">
           <img className='sm:h-[12vh] h-[8vh]' src={fashion} alt="FASHION" />
         </a>
