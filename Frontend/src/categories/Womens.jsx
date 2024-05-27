@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { useAuth } from '../contexts/AuthContext';
 import { useLanguage } from '../contexts/LanguageContext'; 
 import ProductCard from '../components/ProductCard'
+import { useTranslation } from 'react-i18next';
 
 function Womens() {
 
@@ -10,6 +11,7 @@ function Womens() {
   const [products, setProducts] = useState([]);
   const [translatedProducts, setTranslatedProducts] = useState([]);
   const {token} = useAuth();
+  const {t}=useTranslation()
 
   const getProducts = async(e)=>{
     const response = await fetch('/api/v1/products/getProducts',{
@@ -33,7 +35,7 @@ function Womens() {
     return (
     <>
     <div className='mt-8'>
-    <h1 className='font-dancing sm:text-[36px] text-[20px] text-gray-900 xl:pl-32 pl-4'><span className='sm:text-[64px] text-[40px]'>Women's </span> Wear</h1> 
+    <h1 className='font-dancing sm:text-[36px] text-[20px] text-gray-900 xl:pl-32 pl-4'><span className='sm:text-[64px] text-[40px]'>{t("Women's")}</span> {t("Wear")}</h1> 
     </div>
     <div className="mx-auto grid w-full max-w-7xl items-center space-y-4 px-2 py-10 md:grid-cols-2 md:gap-6 md:space-y-0 lg:grid-cols-4">
         {translatedProducts.filter(item=>(

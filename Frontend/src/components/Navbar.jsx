@@ -9,8 +9,9 @@ import i18next from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { useEffect } from 'react';
 import LanguageSelector from '../utils/LanguageSelector';
+import LangSelector from './LangSelector';
+import UnifiedLanguageSelector from './UnifiedLanguageSelector';
 import { useAuth } from '../contexts/AuthContext';
-
 function Navbar() {
 
   const {isLoggedIn} = useAuth();
@@ -129,7 +130,7 @@ function Navbar() {
           
           <div>
             
-                <LanguageSelector setLang={setLang} lang={currentLang} />
+           <UnifiedLanguageSelector setLang={setLang} lang={currentLang} />
            
           </div>
           {isLoggedIn ? (
