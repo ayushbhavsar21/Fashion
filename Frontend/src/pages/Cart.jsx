@@ -12,8 +12,8 @@ function Cart() {
   }, 0);
 
   return (
-    <div className='bg-primary'>
-      <div className='mt-8 text-center '>
+    <div className='bg-primary min-h-[80vh]'>
+      <div className='text-center '>
         <h1 className='font-dancing sm:text-[36px] text-[20px] text-gray-900 '>
           <span className='sm:text-[64px] text-[40px]'>Your </span>Cart
         </h1>
@@ -26,7 +26,7 @@ function Cart() {
               <div className="flow-root">
                 <ul className="-my-7 divide-y divide-quaternary">
                   {cartItems.length === 0 ? (
-                    <p className="mt-3 text-sm text-gray-600">Your cart is empty.</p>
+                    <p className="mt-3 text-sm text-gray-600 p-8">Your cart is empty.</p>
                   ) : (
                     <div>
                       <ul className="mt-3">
