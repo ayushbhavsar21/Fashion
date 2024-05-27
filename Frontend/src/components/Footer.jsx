@@ -31,17 +31,17 @@ export default function Footer() {
               </h3>
               <ul>
                 <li className="mb-4">
-                  <a className=" text-base font-medium text-white hover:text-gray-700" href="#">
+                  <a className=" text-base font-medium text-white hover:text-gray-700" href="/">
                     {t("Home")}
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a className=" text-base font-medium text-white hover:text-gray-700" href="#">
+                  <a className=" text-base font-medium text-white hover:text-gray-700" href="/ShopNow">
                     {t("Shop-Now")}
                   </a>
                 </li>
                 <li className="mb-4">
-                  <a className=" text-base font-medium text-white hover:text-gray-700" href="#">
+                  <a className=" text-base font-medium text-white hover:text-gray-700" href="/Order">
                     {t("Orders")}
                   </a>
                 </li>

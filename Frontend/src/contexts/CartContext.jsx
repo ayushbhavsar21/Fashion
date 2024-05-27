@@ -24,8 +24,7 @@ export function CartProvider({ children }) {
 
     const updatedCartItems = cartItems.filter(item => item.id !== id);
     setCartItems(updatedCartItems);
-
-    localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+    
   };
 
   return (
