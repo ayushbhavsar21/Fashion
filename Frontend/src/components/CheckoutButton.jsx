@@ -21,7 +21,6 @@ function CheckoutButton() {
 
       toast.success(res.message);
 
-      // Clear cart items after successful order placement
       setCartItems([]);
     } catch (error) {
       console.error(error); 

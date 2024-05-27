@@ -8,7 +8,7 @@ import fashion from '../assets/Fashion4.svg'
 import i18next from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { useEffect } from 'react';
-import LangSelector from './LangSelector';
+import LanguageSelector from '../utils/LanguageSelector';
 import { useAuth } from '../contexts/AuthContext';
 
 function Navbar() {
@@ -129,7 +129,7 @@ function Navbar() {
           
           <div>
             
-                <LangSelector setLang={setLang} lang={currentLang} />
+                <LanguageSelector setLang={setLang} lang={currentLang} />
            
           </div>
           {isLoggedIn ? (

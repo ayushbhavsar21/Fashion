@@ -6,9 +6,11 @@ import './i18n'
 import { AuthProvider } from './contexts/AuthContext.jsx'
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { LanguageProvider } from './contexts/LanguageContext.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <AuthProvider>
+    <LanguageProvider>
     <React.StrictMode>
     <App />
     <ToastContainer
@@ -25,6 +27,7 @@ theme="colored"
 bodyClassName="toastBody"
 />
     </React.StrictMode>
+    </LanguageProvider>
   </AuthProvider>
   ,
 )
