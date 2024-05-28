@@ -4,12 +4,14 @@ import CheckoutButton from '../components/CheckoutButton';
 import CartCard from '../components/CartCard';
 
 function Cart() {
-  const { cartItems } = useCart();
+  const { cartItems, storeAmountInLS } = useCart();
 
   // Calculate the total price
   const totalPrice = cartItems.reduce((total, item) => {
     return total + (item.price * item.quantity);
   }, 0);
+
+  storeAmountInLS(totalPrice);
 
   return (
     <div className='bg-primary min-h-[80vh]'>

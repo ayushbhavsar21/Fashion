@@ -7,6 +7,17 @@ export function CartProvider({ children }) {
     const savedCartItems = localStorage.getItem('cartItems');
     return savedCartItems ? JSON.parse(savedCartItems) : [];
   });
+  const [totalAmount, setTotalAmount] = useState(localStorage.getItem('totalAmount') || '');
+
+  const storeAmountInLS = (Amount) => {
+    localStorage.setItem('totalAmount', totalAmount);
+    setTotalAmount(Amount);
+}
+
+const removeAmount = () => {
+  localStorage.removeItem('totalAmount');
+  setTotalAmount("");
+}
 
   const addToCart = (product) => {
     setCartItems((prevItems) => {
@@ -28,7 +39,7 @@ export function CartProvider({ children }) {
   };
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, setCartItems, removeFromCart }}>
+    <CartContext.Provider value={{ cartItems, addToCart, setCartItems, removeFromCart, totalAmount, storeAmountInLS, removeAmount }}>
       {children}
     </CartContext.Provider>
   );

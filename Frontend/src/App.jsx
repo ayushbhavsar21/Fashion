@@ -11,6 +11,7 @@ import Order from './pages/Order';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import { CartProvider } from './contexts/CartContext';
+import Payment from './utils/Payment';
 import './components/App.css';
 
 const App = () => {
@@ -27,6 +28,7 @@ const App = () => {
           <Route exact path="/Cart" element={<Cart/>} />
           <Route exact path="/product" element={<Product/>} />
           <Route exact path="/order" element={<Order/>} />
+          <Route path='/payment' element={<Payment/>}/>
         </Routes>
         <Footer/>
       </Router>
