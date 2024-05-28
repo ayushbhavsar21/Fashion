@@ -10,6 +10,7 @@ import { useTranslation } from "react-i18next";
 function SignIn() {
     const {t}=useTranslation()
 
+    const API_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000';
     const navigate = useNavigate();
     
     const {storeTokenInLS} = useAuth();
@@ -33,7 +34,7 @@ function SignIn() {
         e.preventDefault();
 
         try {
-            const response = await fetch('/api/v1/users/login',{
+            const response = await fetch(`${API_URL}/api/v1/users/login`,{
             method: "POST",
             crossDomain: true,
             headers: {

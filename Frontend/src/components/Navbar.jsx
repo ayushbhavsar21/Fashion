@@ -1,15 +1,10 @@
 import React, { useState } from 'react';
 import bag from '../assets/bag.png';
-import login from '../assets/login.png';
-import search from '../assets/search.png';
 import ham from '../assets/ham.png';
-import languages from '../assets/languages.png';
 import fashion from '../assets/Fashion4.svg'
 import i18next from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { useEffect } from 'react';
-import LanguageSelector from '../utils/LanguageSelector';
-import LangSelector from './LangSelector';
 import UnifiedLanguageSelector from './UnifiedLanguageSelector';
 import { useAuth } from '../contexts/AuthContext';
 function Navbar() {
@@ -33,19 +28,13 @@ function Navbar() {
 
   }
 
-
-
   const [isDropdownOpen, setDropdownOpen] = useState(false);
-  const [isSearchOpen, setSearchOpen] = useState(false);
   const [isLanguagesDropdownOpen, setLanguagesDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);
   };
 
-  const toggleSearch = () => {
-    setSearchOpen(!isSearchOpen);
-  };
 
   const toggleLanguagesDropdown = () => {
     setLanguagesDropdownOpen(!isLanguagesDropdownOpen);
@@ -98,18 +87,6 @@ function Navbar() {
           }
         </div>
         <div className='flex sm:gap-4 gap-2 items-center h-[12vh]'>
-          <div className='flex gap-1'>
-            <input
-              type="text"
-              className={`sm:w-[33vw] w-[30vw] h-[30px] border-[2px] border-imperialred rounded-2xl ${
-                isSearchOpen ? 'block' : 'hidden'
-              }`}
-              placeholder=' Search...'
-            />
-            <button onClick={toggleSearch}>
-              <img src={search} alt="" className='h-[23px]' />
-            </button>
-          </div>
           
           {isLoggedIn ? (
             <div  className='hidden lg:block'>

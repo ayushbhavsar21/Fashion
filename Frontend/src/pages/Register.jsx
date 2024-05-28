@@ -10,6 +10,10 @@ import { useTranslation } from "react-i18next";
 function Register() {
     const { t } = useTranslation()
 
+    const navigate = useNavigate("/");
+    
+    const API_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000';
+
     const [user, setUser] = useState({
         userName: "",
         email: "",
@@ -33,7 +37,7 @@ function Register() {
         e.preventDefault();
 
         try {
-            const response = await fetch('/api/v1/users/register', {
+            const response = await fetch(`${API_URL}/api/v1/users/register`, {
 
                 method: "POST",
                 headers: {

@@ -9,9 +9,11 @@ const Order = () => {
 
     const { token } = useAuth();
 
+    const API_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000';
+
     const getOrders = async()=>{
 
-        const response = await fetch('/api/v1/orders/getOrders',{
+        const response = await fetch(`${API_URL}/api/v1/orders/getOrders`,{
             method: "GET",
             headers:{
                 "Authorization": `${token}`
