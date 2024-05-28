@@ -3,10 +3,6 @@
       {
         "source": "/api/v1/(.*)",
         "destination": "https://e-commerce-arui.onrender.com/api/v1/$1"
-      },
-      {
-        "source": "/(.*)",
-        "destination": "/index.html"
       }
     ],
     "builds": [
@@ -16,12 +12,6 @@
         "config": {
           "distDir": "dist"
         }
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/index.html"
       }
     ]
   }
