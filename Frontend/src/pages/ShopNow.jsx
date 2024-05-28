@@ -69,7 +69,16 @@ function ShopNow() {
       </div>
       <div className='mx-auto grid w-full max-w-7xl items-center space-y-4 px-2 py-10 md:grid-cols-2 md:gap-6 md:space-y-0 lg:grid-cols-4'>
         {translatedProducts
-          .filter((item) => item.category === 'mens')
+          .filter((item) => {
+            const searchLowerCase = searchData.toLowerCase();
+            return(
+              (searchLowerCase === '' || (
+                item.name?.toLowerCase().includes(searchLowerCase) ||
+                item.description?.toLowerCase().includes(searchLowerCase)
+              ))
+              && item.category === 'mens'
+            )
+          })
           .map((item) => (
             <ProductCard key={item.id} props={item} />
           ))}
@@ -78,9 +87,18 @@ function ShopNow() {
     <h1 className='font-dancing sm:text-[36px] text-[20px] text-gray-900 xl:pl-32 pl-4'><span className='sm:text-[64px] text-[40px]'>{t("Women's")}</span> {t("Wear")}</h1> 
     </div>
     <div className="mx-auto grid w-full max-w-7xl items-center space-y-4 px-2 py-10 md:grid-cols-2 md:gap-6 md:space-y-0 lg:grid-cols-4">
-        {translatedProducts.filter(item=>(
-          item.category==='womens'
-        )).map(item=>(
+        {translatedProducts
+        .filter((item) => {
+          const searchLowerCase = searchData.toLowerCase();
+          return(
+            (searchLowerCase === '' || (
+              item.name?.toLowerCase().includes(searchLowerCase) ||
+              item.description?.toLowerCase().includes(searchLowerCase)
+            ))
+            && item.category === 'womens'
+          )
+        })
+        .map(item=>(
           <ProductCard 
           key= {item.id}
           props= {item}
@@ -91,9 +109,18 @@ function ShopNow() {
     <h1 className='font-dancing sm:text-[36px] text-[20px] text-gray-900 xl:pl-32 pl-4'><span className='sm:text-[64px] text-[40px]'>{t("Shoes")}</span></h1> 
     </div>
     <div className="mx-auto grid w-full max-w-7xl items-center space-y-4 px-2 py-10 md:grid-cols-2 md:gap-6 md:space-y-0 lg:grid-cols-4">
-        {translatedProducts.filter(item=>(
-          item.category==='shoes'
-        )).map(item=>(
+        {translatedProducts
+        .filter((item) => {
+          const searchLowerCase = searchData.toLowerCase();
+          return(
+            (searchLowerCase === '' || (
+              item.name?.toLowerCase().includes(searchLowerCase) ||
+              item.description?.toLowerCase().includes(searchLowerCase)
+            ))
+            && item.category === 'shoes'
+          )
+        })
+        .map(item=>(
           <ProductCard 
           key= {item.id}
           props= {item}
