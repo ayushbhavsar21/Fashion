@@ -6,11 +6,14 @@ import line from "../assets/line.png"
 import Google from "../assets/Google.png"
 import { toast } from 'react-toastify';
 import { useTranslation } from "react-i18next";
+import { useAuth } from "../contexts/AuthContext";
 
 function Register() {
     const { t } = useTranslation()
 
     const navigate = useNavigate("/");
+
+    const {storeTokenInLS} = useAuth();
     
     const API_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000';
 
@@ -49,7 +52,8 @@ function Register() {
             if (response.ok) {
 
                 const res = await response.json();
-
+                storeTokenInLS(res.data.accessToken);
+                
                 setUser({ userName: "", email: "", password: "" })
 
                 toast.success(res.message);
