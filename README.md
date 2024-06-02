@@ -92,6 +92,20 @@ Start the backend server
 Live Website : https://fashion28-e-commerce.vercel.app/
 
 Youtube: https://youtu.be/DLzLRxLfifk?si=FpFjBPb2X3rcdVDB
+## Screenshots
+
+![App Screenshot](https://devfolio.co/_next/image?url=https%3A%2F%2Fassets.devfolio.co%2Fprojects%2F1c1176faa09f413ca1c408f5d1cb0c8a%2F6e4e4c9f-1323-4e7d-9169-3c5055b4f13c.png&w=1440&q=75)
+
+![App Screenshot](https://devfolio.co/_next/image?url=https%3A%2F%2Fassets.devfolio.co%2Fprojects%2F1c1176faa09f413ca1c408f5d1cb0c8a%2Ff8657497-1db1-44c5-a1fe-4a3322388180.png&w=1440&q=75)
+
+![App Screenshot](https://devfolio.co/_next/image?url=https%3A%2F%2Fassets.devfolio.co%2Fprojects%2F1c1176faa09f413ca1c408f5d1cb0c8a%2F9241a9af-0c46-41c9-bb29-174404eb9f2e.png&w=1440&q=75)
+
+![App Screenshot](https://devfolio.co/_next/image?url=https%3A%2F%2Fassets.devfolio.co%2Fprojects%2F1c1176faa09f413ca1c408f5d1cb0c8a%2F560858eb-887d-47a0-b581-903661d5171c.png&w=1440&q=75)
+
+![App Screenshot](https://devfolio.co/_next/image?url=https%3A%2F%2Fassets.devfolio.co%2Fprojects%2F1c1176faa09f413ca1c408f5d1cb0c8a%2F0520ffb9-a50a-45a9-a0f5-4b36ebfb81cb.png&w=1440&q=75)
+
+
+
 ## Tech Stack
 
 **Client:** React, Redux, TailwindCSS, HTML, Javascript
