@@ -108,10 +108,10 @@ function Register() {
                         
                         </form>
                         <img className=" drop-shadow-2xl relative lg:bottom-4" src={line} alt="" />
-                        <button className="flex justify-center gap-4 rounded-lg border-[1px] border-black items-center bg-primary drop-shadow-2xl w-[80%] self-center p-2 relative lg:bottom-12" >
+                        <a href="/auth/google" className="flex justify-center gap-4 rounded-lg border-[1px] border-black items-center bg-primary drop-shadow-2xl w-[80%] self-center p-2 relative lg:bottom-12" role="button">
                             <img className="h-[32px]" src={Google} alt="Google" />
                             <p className=" ">{t("Register with Google")}</p>
-                        </button>
+                        </a>
                     </div>
                     <div className=" w-[80%] flex flex-col items-center gap-1 pt-2 lg:mb-0 mb-4">
                         <div className="">{t("Already Have Account ?")}</div>

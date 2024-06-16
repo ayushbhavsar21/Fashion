@@ -24,11 +24,22 @@ function ProductCard({ props }) {
 
   return (
     <div className="rounded-md border border-quaternary font-playfair bg-tertiary">
-      <img
-        src={props.productImage}
-        alt="Laptop"
-        className="aspect-[16/9] w-full rounded-md md:aspect-auto md:h-[300px] lg:h-[200px]"
-      />
+    
+      <div className="w-full max-w-sm p-4 rounded-md shadow-lg bg-white">
+  <img
+    src={props.productImage}
+    alt="Product Image"
+    className="rounded-md"
+    style={{
+      objectFit: 'contain',
+      width: '100%',
+      height: '200px',
+    }}
+  />
+
+</div>
+
+
       <div className="p-4">
         <h1 className="inline-flex items-center text-lg font-semibold">{props.name}</h1>
         <p className="mt-3 text-sm text-gray-600">
